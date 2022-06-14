@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">movcompmlcr2022a</string>
+    <string name="saludo" translatable="false">Hola amigos</string>
+    <string name="condicion">Condiciones</string>
+    <color name="color_texto">#FFFFFFFF</color>
+    <color name="color_fondo">#FF000000</color>
+</resources>

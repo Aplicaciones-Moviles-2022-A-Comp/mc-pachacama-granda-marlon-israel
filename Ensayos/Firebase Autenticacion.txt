@@ -1,0 +1,17 @@
+Firebase Autenticacion
+Es una plataforma en la nube para el desarrollo de aplicaciones web y móvil. 
+Está disponible para distintas plataformas como lo es (iOS, Android y web)
+
+Autenticacion
+Firebase ofrece un sistema de autenticación que permite tanto el registro propiamente dicho 
+(mediante email y contraseña) como el acceso utilizando perfiles de otras plataformas externas 
+(por ejemplo, de Facebook, Google o Twitter),
+
+Cuando el acceso se realiza correctamente, puedes ver la información básica del perfil del 
+usuario y controlar el acceso del usuario a los datos almacenados en otros productos de 
+Firebase. También puedes utilizar el token de autenticación proporcionado para verificar 
+la identidad de los usuarios en tus propios servicios de backend.
+
+Otra forma de poder auntenticarse es la verifiacion en dos pasos el cual funciona 
+en recibir un correo a nuestra cuenta y dentro de este se nos pedira un numero el cual se debe
+seleccionar en la pc, como en el celular 

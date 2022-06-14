@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">movcompmlcr2022a</string>
+    <string name="condicion">Condicion 3</string>
+    <color name="color_texto" translatable="false">#FF6200EE</color>
+    <color name="color_fondo" translatable="false">#FF000000</color>
+</resources>
