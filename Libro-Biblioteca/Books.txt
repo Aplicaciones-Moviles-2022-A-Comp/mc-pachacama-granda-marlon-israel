@@ -1,0 +1,3 @@
+Geometria Plana,Biblioteca EPN,Calvache,2014,Ciencias Exactas
+Quimica Avanzada,Biblioteca EPN,Paredes,1596,Ciencias Exactas
+Ingles,Biblioteca UCE,Richard ,2005,Idiomas
