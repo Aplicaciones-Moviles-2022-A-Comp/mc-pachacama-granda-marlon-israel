@@ -16,6 +16,7 @@
         android:textColor="@color/color_texto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,18 +24,18 @@
         android:id="@+id/btn_ciclo_vida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="84dp"
         android:text="CICLOVIDA"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_ir_list_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:text="Button"
+        android:text="LIST VIEW"
         app:layout_constraintBottom_toBottomOf="@+id/btn_ciclo_vida"
         app:layout_constraintStart_toEndOf="@+id/btn_ciclo_vida"
         app:layout_constraintTop_toTopOf="@+id/btn_ciclo_vida" />

@@ -33,7 +33,12 @@ android {
         viewBinding true
     }
 }
-
+android {
+    //...
+    lintOptions {
+        abortOnError false
+    }
+}
 dependencies {
 
     implementation 'io.sentry:sentry-android:5.7.4'
