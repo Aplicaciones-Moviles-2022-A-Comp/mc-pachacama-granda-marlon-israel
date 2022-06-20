@@ -15,4 +15,10 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_activity_aciclo_vida2">ACicloVida2</string>
+
+    <string-array name="string_array_opciones_dialogo">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miercoles</item>
+    </string-array>
 </resources>
