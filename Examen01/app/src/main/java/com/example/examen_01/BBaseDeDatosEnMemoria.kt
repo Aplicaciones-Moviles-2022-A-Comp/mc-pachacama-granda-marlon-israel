@@ -16,7 +16,7 @@ class BBaseDeDatosMemoria {
                 BEntrenador(2,"Diana","22")
             )
             arregloEntrenador.add(
-                BEntrenador(3,"Somaly","21")
+                BEntrenador(3,"Carolina","21")
             )
 
             // cargar datos pokemon
