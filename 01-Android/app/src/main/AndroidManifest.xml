@@ -14,21 +14,22 @@
         android:theme="@style/Theme.Movcompmipg2022a"
         tools:targetApi="31">
         <activity
+            android:name=".CIntentExplicitoParametros"
+            android:exported="false" />
+        <activity
             android:name=".Contador"
             android:exported="false" />
         <activity
             android:name=".BListView"
-            android:exported="false" />
-        <activity
-            android:name=".ACicloVida2"
-            android:exported="false"
-            android:label="@string/title_activity_aciclo_vida2"
-            android:theme="@style/Theme.Movcompmipg2022a.NoActionBar" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Movcompmipg2022a.NoActionBar" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ACicloVida"
             android:exported="false"

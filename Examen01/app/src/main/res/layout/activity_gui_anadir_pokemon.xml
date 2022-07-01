@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GUI_AnadirPokemon">
+
+    <TextView
+        android:id="@+id/tv_AnadirPokemon"
+        android:layout_width="326dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="70dp"
+        android:text="Añadir Nuevo Pokemon"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_NombrePokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Nombre:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_AnadirPokemon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_AnadirPokemon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_AnadirPokemon" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout5"
+        android:layout_width="326dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_NombrePokemon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_NombrePokemon">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtIn_NombrePokemon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Nombre del pokemon" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_TipoPokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Tipo:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+
+    <Button
+        android:id="@+id/btn_AddPokemon"
+        android:layout_width="146dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="48dp"
+        android:text="añadir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/id_spinner_tipo_pokemon"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/id_spinner_tipo_pokemon" />
+
+    <Button
+        android:id="@+id/btn_CancelPokemon"
+        android:layout_width="146dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="48dp"
+        android:text="cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/id_spinner_tipo_pokemon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/id_spinner_tipo_pokemon" />
+
+    <Spinner
+        android:id="@+id/id_spinner_tipo_pokemon"
+        style="@android:style/Widget.Spinner"
+        android:layout_width="326dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_TipoPokemon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_TipoPokemon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_TipoPokemon"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
