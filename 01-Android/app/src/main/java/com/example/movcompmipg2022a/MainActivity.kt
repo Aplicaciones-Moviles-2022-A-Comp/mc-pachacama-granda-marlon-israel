@@ -104,6 +104,9 @@ class MainActivity : AppCompatActivity() {
         intentExplicito.putExtra("nombre", "Adrian")
         intentExplicito.putExtra("apellido", "Eguez")
         intentExplicito.putExtra("edad", 32)
+        intentExplicito.putExtra(
+            "entrenadorPrincipal",
+            BEntrenador("Marlon","Paleta"))
 
         contenidoIntentExplicito.launch(intentExplicito)
         // startActivityForResult(intentExplicito, CODIGO_RESPUESTA_INTENT_EXPLICITO)// 401
