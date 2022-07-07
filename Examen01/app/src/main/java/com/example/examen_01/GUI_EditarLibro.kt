@@ -5,16 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.Spinner
 import com.google.android.material.textfield.TextInputEditText
 
-class GUI_EditarPokemon : AppCompatActivity() {
+class GUI_EditarLibro : AppCompatActivity() {
 
     var posicionEntrenador = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gui_editar_pokemon)
+        setContentView(R.layout.activity_gui_editar_libro)
     }
 
     override fun onStart() {
@@ -30,14 +29,14 @@ class GUI_EditarPokemon : AppCompatActivity() {
 
         var idPokemon: Int = 0
 
-        BBaseDeDatosMemoria.arregloEntrenadorXPokemon.forEachIndexed{ indice: Int, entrenadorXpokemon : BEntrenadorXPokemon ->
+        BBaseDeDatosMemoria.arregloEntrenadorXPokemon.forEachIndexed{ indice: Int, entrenadorXpokemon : BBibliotecaXLibro ->
             if (idEntrenadoXPokemon == entrenadorXpokemon.idBEntrenadorXPokemon){
                 txtInNombreEditarPokemon.setText(entrenadorXpokemon.nombreEntrenadorXPokemon)
                 idPokemon = entrenadorXpokemon.idPokemon
             }
         }
 
-        BBaseDeDatosMemoria.arregloPokemon.forEachIndexed{ indice: Int, pokemon : BPokemon ->
+        BBaseDeDatosMemoria.arregloPokemon.forEachIndexed{ indice: Int, pokemon : BLibro ->
             if (idPokemon == pokemon.idPokemon){
                 txtInEspecieEditarPokemon.setText(pokemon.nombre)
                 txtInTipoEditarPokemon.setText(pokemon.tipo)
@@ -46,7 +45,7 @@ class GUI_EditarPokemon : AppCompatActivity() {
 
         val btnActualizarEditarPokemon = findViewById<Button>(R.id.btn_ActualizarEditarPokemon)
         btnActualizarEditarPokemon.setOnClickListener {
-            BBaseDeDatosMemoria.arregloEntrenadorXPokemon.forEachIndexed{ indice: Int, entrenadorXpokemon: BEntrenadorXPokemon ->
+            BBaseDeDatosMemoria.arregloEntrenadorXPokemon.forEachIndexed{ indice: Int, entrenadorXpokemon: BBibliotecaXLibro ->
                 if (idEntrenadoXPokemon == entrenadorXpokemon.idBEntrenadorXPokemon){
                     Log.i("editar","${txtInNombreEditarPokemon.text.toString()}")
                     entrenadorXpokemon.nombreEntrenadorXPokemon = (txtInNombreEditarPokemon.text.toString())

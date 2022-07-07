@@ -3,51 +3,53 @@ package com.example.examen_01
 class BBaseDeDatosMemoria {
 
     companion object{
-        var arregloEntrenador = arrayListOf<BEntrenador>()
-        var arregloPokemon = arrayListOf<BPokemon>()
-        var arregloEntrenadorXPokemon = arrayListOf<BEntrenadorXPokemon>()
+        var arregloBiblioteca = arrayListOf<BBiblioteca>()
+        var arregloLibro = arrayListOf<BLibro>()
+        var arregloBibliotecaXLibro = arrayListOf<BBibliotecaXLibro>()
 
         init {
-            // cargar datos entrenador
-            arregloEntrenador.add(
-                BEntrenador(1,"Marlon","23")
+            // cargar datos biblioteca
+            arregloBiblioteca.add(
+                BBiblioteca(1,"Biblioteca UCE","1980","Quito","Av. America","2345678")
             )
-            arregloEntrenador.add(
-                BEntrenador(2,"Diana","22")
+            arregloBiblioteca.add(
+                BBiblioteca(1,"Biblioteca EPN","1981","Quito","Av. ladron de Guevara","2345690")
+
             )
-            arregloEntrenador.add(
-                BEntrenador(3,"Carolina","21")
+            arregloBiblioteca.add(
+                BBiblioteca(1,"Biblioteca ESPE","1945","Quito","Av. Militar","21347892")
+
             )
 
-            // cargar datos pokemon
-            arregloPokemon.add(
-                BPokemon(1,"Pikachu","Electrico")
+            // cargar datos libros
+            arregloLibro.add(
+                BLibro(1,"Geometria Plana","Biblioteca EPN","Calvache","2014","Ciencias Exactas")
             )
-            arregloPokemon.add(
-                BPokemon(2,"Squerel","Agua")
+            arregloLibro.add(
+                BLibro(1,"Fisica","Biblioteca UCE","Vallejo","2010","Ciencias Exactas")
             )
-            arregloPokemon.add(
-                BPokemon(3,"Bolbasor","Hoja")
+            arregloLibro.add(
+                BLibro(1,"Algebra","Biblioteca ESPE","Rojas","2000","Ciencias Exactas")
             )
 
-            // cargar datos entrenador x pokemon
-            arregloEntrenadorXPokemon.add(
-                BEntrenadorXPokemon(1, "sque", 1,2)
+            // cargar datos biblioteca x libro
+            arregloBibliotecaXLibro.add(
+                BBibliotecaXLibro(1, "Geometia Plana", 1,2)
             )
-            arregloEntrenadorXPokemon.add(
-                BEntrenadorXPokemon(2, "bol", 1, 3)
+            arregloBibliotecaXLibro.add(
+                BBibliotecaXLibro(2, "Fisica", 1, 3)
             )
-            arregloEntrenadorXPokemon.add(
-                BEntrenadorXPokemon(3, "bolba",2, 3)
+            arregloBibliotecaXLibro.add(
+                BBibliotecaXLibro(3, "Quimica",2, 3)
             )
-            arregloEntrenadorXPokemon.add(
-                BEntrenadorXPokemon(4, "pika",2,1)
+            arregloBibliotecaXLibro.add(
+                BBibliotecaXLibro(4, "Algebra",2,1)
             )
-            arregloEntrenadorXPokemon.add(
-                BEntrenadorXPokemon(5, "squerel",2,2)
+            arregloBibliotecaXLibro.add(
+                BBibliotecaXLibro(5, "Calculo Vectorial",2,2)
             )
-            arregloEntrenadorXPokemon.add(
-                BEntrenadorXPokemon(6, "querel",3,2)
+            arregloBibliotecaXLibro.add(
+                BBibliotecaXLibro(6, "Bioquimica",3,2)
             )
 
         }

@@ -7,12 +7,12 @@ import android.util.Log
 import android.widget.Button
 import com.google.android.material.textfield.TextInputEditText
 
-class GUI_EditarEntrenador : AppCompatActivity() {
+class GUI_EditarBiblioteca : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.i("ciclo-vida", "onCreate")
-        setContentView(R.layout.activity_gui_editar_entrenador)
+        setContentView(R.layout.activity_gui_editar_biblioteca)
     }
 
     override fun onStart() {
@@ -24,7 +24,7 @@ class GUI_EditarEntrenador : AppCompatActivity() {
         val txtInNombreEditar = findViewById<TextInputEditText>(R.id.txtIn_NombreEntrenadorEditar)
         val txtInEdadEditar = findViewById<TextInputEditText>(R.id.txtIn_EdadEditar)
 
-        BBaseDeDatosMemoria.arregloEntrenador.forEachIndexed{ indice: Int, entrenador : BEntrenador ->
+        BBaseDeDatosMemoria.arregloEntrenador.forEachIndexed{ indice: Int, entrenador : BBiblioteca ->
             Log.i("testExamen","${entrenador.idEntrenador} -> ${entrenador.nombre}")
             if (indice == posicionEntrenador){
                 txtInNombreEditar.setText(entrenador.nombre)
@@ -34,7 +34,7 @@ class GUI_EditarEntrenador : AppCompatActivity() {
 
         val btnActualizarEditar = findViewById<Button>(R.id.btn_ActualizarEditar)
         btnActualizarEditar.setOnClickListener {
-            BBaseDeDatosMemoria.arregloEntrenador.forEachIndexed{ indice: Int, entrenador: BEntrenador ->
+            BBaseDeDatosMemoria.arregloEntrenador.forEachIndexed{ indice: Int, entrenador: BBiblioteca ->
                 if (indice == posicionEntrenador){
                     Log.i("editar","${txtInNombreEditar.text.toString()}")
                     entrenador.nombre = (txtInNombreEditar.text.toString())

@@ -19,22 +19,22 @@
             android:label="@string/title_activity_menu"
             android:theme="@style/Theme.Examen01.NoActionBar" />
         <activity
-            android:name=".GUI_Pokemon"
+            android:name=".GUI_Libro"
             android:exported="false" />
         <activity
             android:name=".GUI_Home"
             android:exported="false" />
         <activity
-            android:name=".GUI_EditarPokemon"
+            android:name=".GUI_EditarLibro"
             android:exported="false" />
         <activity
-            android:name=".GUI_EditarEntrenador"
+            android:name=".GUI_EditarBiblioteca"
             android:exported="false" />
         <activity
-            android:name=".GUI_AnadirPokemon"
+            android:name=".GUI_AnadirLibro"
             android:exported="false" />
         <activity
-            android:name=".GUI_AnadirEntrenador"
+            android:name=".GUI_AnadirBiblioteca"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

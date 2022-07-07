@@ -1,6 +1,5 @@
 package com.example.examen_01
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +8,6 @@ import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import androidx.activity.result.contract.ActivityResultContracts
 
 class GUI_Home : AppCompatActivity() {
 
@@ -26,21 +24,21 @@ class GUI_Home : AppCompatActivity() {
         super.onStart()
         Log.i("ciclo-vida", "onStart")
 
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_Entrenador)
+        val listViewEntrenador = findViewById<ListView>(R.id.lv_Bilioteca)
 
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
-            BBaseDeDatosMemoria.arregloEntrenador
+            BBaseDeDatosMemoria.arregloBiblioteca
         )
         listViewEntrenador.adapter = adaptador
         adaptador.notifyDataSetChanged()
 
         this.registerForContextMenu(listViewEntrenador)
 
-        val btnAnadirEntrenador = findViewById<Button>(R.id.btn_AnadirEntrenador)
+        val btnAnadirEntrenador = findViewById<Button>(R.id.btn_AnadirBiblioteca)
         btnAnadirEntrenador.setOnClickListener {
-            val intentAddEntrenador = Intent(this, GUI_AnadirEntrenador::class.java)
+            val intentAddEntrenador = Intent(this, GUI_AnadirBiblioteca::class.java)
             startActivity(intentAddEntrenador)
         }
 
@@ -51,9 +49,9 @@ class GUI_Home : AppCompatActivity() {
             // Guardar las variables
             // primitivos
             putInt("idItemSeleccionado",idItemSeleccionado)
-            putParcelableArrayList("arregloEntrenador",BBaseDeDatosMemoria.arregloEntrenador)
-            putParcelableArrayList("arregloEntrenadorXpokemon",BBaseDeDatosMemoria.arregloEntrenadorXPokemon)
-            putParcelableArrayList("arregloPokemon",BBaseDeDatosMemoria.arregloPokemon)
+            putParcelableArrayList("arregloEntrenador",BBaseDeDatosMemoria.arregloBiblioteca)
+            putParcelableArrayList("arregloEntrenadorXpokemon",BBaseDeDatosMemoria.arregloBibliotecaXLibro)
+            putParcelableArrayList("arregloPokemon",BBaseDeDatosMemoria.arregloLibro)
         }
         super.onSaveInstanceState(outState)
     }
@@ -61,17 +59,17 @@ class GUI_Home : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         idItemSeleccionado = savedInstanceState.getInt("idItemSeleccionado")
-        BBaseDeDatosMemoria.arregloEntrenador = savedInstanceState.getParcelableArrayList<BEntrenador>("arregloEntrenador")!!
-        BBaseDeDatosMemoria.arregloEntrenadorXPokemon = savedInstanceState.getParcelableArrayList<BEntrenadorXPokemon>("arregloEntrenadorXpokemon")!!
-        BBaseDeDatosMemoria.arregloPokemon = savedInstanceState.getParcelableArrayList<BPokemon>("arregloPokemon")!!
+        BBaseDeDatosMemoria.arregloBiblioteca = savedInstanceState.getParcelableArrayList<BBiblioteca>("arregloBiblioteca")!!
+        BBaseDeDatosMemoria.arregloBibliotecaXLibro = savedInstanceState.getParcelableArrayList<BBibliotecaXLibro>("arregloBibliotecaXLibro")!!
+        BBaseDeDatosMemoria.arregloLibro = savedInstanceState.getParcelableArrayList<BLibro>("arregloLibro")!!
         if (idItemSeleccionado == null){
             idItemSeleccionado = 0
         }
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_Entrenador)
+        val listViewEntrenador = findViewById<ListView>(R.id.lv_Bilioteca)
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
-            BBaseDeDatosMemoria.arregloEntrenador
+            BBaseDeDatosMemoria.arregloBiblioteca
         )
         listViewEntrenador.adapter = adaptador
         adaptador.notifyDataSetChanged()
@@ -96,7 +94,7 @@ class GUI_Home : AppCompatActivity() {
         return when (item.itemId) {
             R.id.mi_editar -> {
                 Log.i("context-menu", "Edit position: ${idItemSeleccionado}")
-                abrirActividadConParametros(GUI_EditarEntrenador::class.java)
+                abrirActividadConParametros(GUI_EditarBiblioteca::class.java)
                 return true
             }
             R.id.mi_eliminar -> {
@@ -104,9 +102,9 @@ class GUI_Home : AppCompatActivity() {
                 eliminarEntrenador(idItemSeleccionado)
                 return true
             }
-            R.id.mi_pokemons -> {
-                Log.i("context-menu", "Pokemons: ${idItemSeleccionado}")
-                abrirActividadConParametros(GUI_Pokemon::class.java)
+            R.id.mi_libros -> {
+                Log.i("context-menu", "Libros: ${idItemSeleccionado}")
+                abrirActividadConParametros(GUI_Libro::class.java)
                 return true
             }
             else -> super.onContextItemSelected(item)
@@ -124,26 +122,26 @@ class GUI_Home : AppCompatActivity() {
     fun eliminarEntrenador(
         posicioEntrenadorEnliminar: Int
     ) {
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_Entrenador)
+        val listViewEntrenador = findViewById<ListView>(R.id.lv_Bilioteca)
 
-        var entrenadorAeliminar = BBaseDeDatosMemoria.arregloEntrenador.elementAt(posicioEntrenadorEnliminar)
-        var idEntrenadorAeliminar = entrenadorAeliminar.idEntrenador
+        var entrenadorAeliminar = BBaseDeDatosMemoria.arregloBiblioteca.elementAt(posicioEntrenadorEnliminar)
+        var idEntrenadorAeliminar = entrenadorAeliminar.idBiblioteca
 
-        var auxListaEntrenadorXpokemon = arrayListOf<BEntrenadorXPokemon>()
+        var auxListaEntrenadorXpokemon = arrayListOf<BBibliotecaXLibro>()
 
-        BBaseDeDatosMemoria.arregloEntrenadorXPokemon.forEachIndexed{ indice: Int, entrenadorXpokemon: BEntrenadorXPokemon ->
-            if(idEntrenadorAeliminar != entrenadorXpokemon.idEntrenador){
+        BBaseDeDatosMemoria.arregloBibliotecaXLibro.forEachIndexed{ indice: Int, entrenadorXpokemon: BBibliotecaXLibro ->
+            if(idEntrenadorAeliminar != entrenadorXpokemon.idBiblioteca){
                 auxListaEntrenadorXpokemon.add(entrenadorXpokemon)
             }
         }
 
-        BBaseDeDatosMemoria.arregloEntrenador.removeAt(posicioEntrenadorEnliminar)
-        BBaseDeDatosMemoria.arregloEntrenadorXPokemon = auxListaEntrenadorXpokemon
+        BBaseDeDatosMemoria.arregloBiblioteca.removeAt(posicioEntrenadorEnliminar)
+        BBaseDeDatosMemoria.arregloBibliotecaXLibro = auxListaEntrenadorXpokemon
 
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
-            BBaseDeDatosMemoria.arregloEntrenador
+            BBaseDeDatosMemoria.arregloBiblioteca
         )
         listViewEntrenador.adapter = adaptador
         adaptador.notifyDataSetChanged()

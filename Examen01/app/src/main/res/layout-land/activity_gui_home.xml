@@ -7,11 +7,11 @@
     tools:context=".GUI_Home">
 
     <TextView
-        android:id="@+id/tv_ListaEntrenadores"
+        android:id="@+id/tv_ListaBibliotecas"
         android:layout_width="320dp"
         android:layout_height="86dp"
         android:layout_marginTop="10dp"
-        android:text="Lista de Entrenadores:"
+        android:text="Lista de Bibliotecas:"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btn_AnadirEntrenador"
+        android:id="@+id/btn_AnadirBiblioteca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -40,10 +40,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tv_ListaEntrenadores"
+        app:layout_constraintEnd_toEndOf="@+id/tv_ListaBibliotecas"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_ListaEntrenadores"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ListaEntrenadores"
+        app:layout_constraintStart_toStartOf="@+id/tv_ListaBibliotecas"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ListaBibliotecas"
         app:layout_constraintVertical_bias="0.217">
 
         <LinearLayout
@@ -52,7 +52,7 @@
             android:orientation="vertical">
 
             <ListView
-                android:id="@+id/lv_Entrenador"
+                android:id="@+id/lv_Bilioteca"
                 android:layout_width="match_parent"
                 android:layout_height="175dp" />
         </LinearLayout>

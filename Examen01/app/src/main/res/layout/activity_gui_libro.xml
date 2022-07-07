@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GUI_Pokemon">
+    tools:context=".GUI_Libro">
 
     <TextView
-        android:id="@+id/tv_EntrenadorXPokemon"
+        android:id="@+id/tv_BibliotecaXLibro"
         android:layout_width="316dp"
         android:layout_height="50dp"
-        android:layout_marginTop="70dp"
-        android:text="Lista de Pokemones"
+        android:layout_marginTop="45dp"
+        android:text="Lista de Libros"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -23,21 +23,21 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_NombreEntrenadorXPokemon"
+        android:id="@+id/tv_NombreBibliotecaXLibro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Entrenador: Anthony"
+        android:text="Biblioteca: Biblioteca EPN"
         android:textColor="#494949"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tv_EntrenadorXPokemon"
+        app:layout_constraintEnd_toEndOf="@+id/tv_BibliotecaXLibro"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_EntrenadorXPokemon"
-        app:layout_constraintTop_toBottomOf="@+id/tv_EntrenadorXPokemon" />
+        app:layout_constraintStart_toStartOf="@+id/tv_BibliotecaXLibro"
+        app:layout_constraintTop_toBottomOf="@+id/tv_BibliotecaXLibro" />
 
     <Button
-        android:id="@+id/btn_NuevoPokemon"
+        android:id="@+id/btn_NuevoLibro"
         android:layout_width="146dp"
         android:layout_height="48dp"
         android:layout_marginBottom="40dp"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="@+id/scrollView6" />
 
     <Button
-        android:id="@+id/btn_AtrasPokemon"
+        android:id="@+id/btn_AtrasLibro"
         android:layout_width="146dp"
         android:layout_height="48dp"
         android:layout_marginBottom="40dp"
@@ -60,13 +60,14 @@
 
     <ScrollView
         android:id="@+id/scrollView6"
-        android:layout_width="320dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_NombreEntrenadorXPokemon"
-        app:layout_constraintStart_toStartOf="@+id/tv_NombreEntrenadorXPokemon"
-        app:layout_constraintTop_toBottomOf="@+id/tv_NombreEntrenadorXPokemon">
+        android:layout_width="307dp"
+        android:layout_height="263dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_NombreBibliotecaXLibro"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="@+id/tv_NombreBibliotecaXLibro"
+        app:layout_constraintTop_toBottomOf="@+id/tv_NombreBibliotecaXLibro">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,9 +75,9 @@
             android:orientation="vertical">
 
             <ListView
-                android:id="@+id/lv_Pokemon"
+                android:id="@+id/lv_Libro"
                 android:layout_width="320dp"
-                android:layout_height="400dp" />
+                android:layout_height="259dp" />
         </LinearLayout>
     </ScrollView>
 
@@ -84,10 +85,10 @@
         android:id="@+id/btn_verBD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginTop="50dp"
         android:text="Ver BD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_EntrenadorXPokemon" />
+        app:layout_constraintEnd_toEndOf="@+id/scrollView6"
+        app:layout_constraintStart_toStartOf="@+id/scrollView6"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

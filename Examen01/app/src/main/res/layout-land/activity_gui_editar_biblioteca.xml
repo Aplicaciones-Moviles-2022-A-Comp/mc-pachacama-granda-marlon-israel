@@ -4,52 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GUI_AnadirPokemon">
+    tools:context=".GUI_EditarBiblioteca">
 
     <TextView
-        android:id="@+id/tv_AnadirPokemon"
-        android:layout_width="326dp"
+        android:id="@+id/tv_EditarEntrenador"
+        android:layout_width="316dp"
         android:layout_height="86dp"
         android:layout_marginTop="10dp"
-        android:text="Añadir Nuevo Pokemon"
+        android:text="Editar Entrenador Pokemon"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintHorizontal_bias="0.308"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019" />
 
     <Button
-        android:id="@+id/btn_AddPokemon"
+        android:id="@+id/btn_ActualizarEditar"
         android:layout_width="146dp"
         android:layout_height="48dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginBottom="200dp"
-        android:text="añadir"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="216dp"
+        android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/scrollView5" />
+        app:layout_constraintStart_toEndOf="@+id/scrollView7" />
 
     <Button
-        android:id="@+id/btn_CancelPokemon"
+        android:id="@+id/btn_CancelarEditar"
         android:layout_width="146dp"
         android:layout_height="48dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginBottom="108dp"
-        android:text="cancelar"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="124dp"
+        android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/scrollView5" />
+        app:layout_constraintStart_toEndOf="@+id/scrollView7" />
 
     <ScrollView
-        android:id="@+id/scrollView5"
+        android:id="@+id/scrollView7"
         android:layout_width="326dp"
         android:layout_height="180dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tv_AnadirPokemon"
-        app:layout_constraintStart_toStartOf="@+id/tv_AnadirPokemon"
-        app:layout_constraintTop_toBottomOf="@+id/tv_AnadirPokemon">
+        app:layout_constraintEnd_toEndOf="@+id/tv_EditarEntrenador"
+        app:layout_constraintStart_toStartOf="@+id/tv_EditarEntrenador"
+        app:layout_constraintTop_toBottomOf="@+id/tv_EditarEntrenador">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +59,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_NombrePokemon"
+                android:id="@+id/tv_NombreEntrenadorEditar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre:"
@@ -66,40 +68,40 @@
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout5"
+                android:id="@+id/textInputLayout3"
                 android:layout_width="326dp"
                 android:layout_height="56dp"
                 android:layout_marginTop="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtIn_NombrePokemon"
+                    android:id="@+id/txtIn_NombreEntrenadorEditar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Nombre del pokemon" />
+                    android:hint="hint" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/tv_TipoPokemon"
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="Tipo:"
+                android:text="Edad:"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/id_spinner_tipo_pokemon"
-                style="@android:style/Widget.Spinner"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout4"
                 android:layout_width="326dp"
                 android:layout_height="56dp"
-                android:layout_marginTop="12dp"
-                app:layout_constraintEnd_toEndOf="@+id/tv_TipoPokemon"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tv_TipoPokemon"
-                app:layout_constraintTop_toBottomOf="@+id/tv_TipoPokemon"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_marginTop="12dp">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtIn_EdadEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </ScrollView>
 
