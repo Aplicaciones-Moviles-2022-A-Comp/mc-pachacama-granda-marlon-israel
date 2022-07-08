@@ -19,26 +19,36 @@ class GUI_EditarBiblioteca : AppCompatActivity() {
         Log.i("ciclo-vida", "onStart")
         super.onStart()
 
-        val posicionEntrenador = intent.getIntExtra("posicionEditar",1)
+        val posicionbiblioteca = intent.getIntExtra("posicionEditar",1)
 
-        val txtInNombreEditar = findViewById<TextInputEditText>(R.id.txtIn_NombreEntrenadorEditar)
-        val txtInEdadEditar = findViewById<TextInputEditText>(R.id.txtIn_EdadEditar)
+        var txtInNombreBiblioteca = findViewById<TextInputEditText>(R.id.txtIn_NombreBiblioteca)
+        var txtInYearFundacion = findViewById<TextInputEditText>(R.id.txtIn_YearFundacion)
+        var txtInCiudad = findViewById<TextInputEditText>(R.id.txtIn_Ciudad)
+        var txtInDireccion = findViewById<TextInputEditText>(R.id.txtln_Direccion)
+        var txtInTelefono = findViewById<TextInputEditText>(R.id.txtln_Telefono)
 
-        BBaseDeDatosMemoria.arregloEntrenador.forEachIndexed{ indice: Int, entrenador : BBiblioteca ->
-            Log.i("testExamen","${entrenador.idEntrenador} -> ${entrenador.nombre}")
-            if (indice == posicionEntrenador){
-                txtInNombreEditar.setText(entrenador.nombre)
-                txtInEdadEditar.setText(entrenador.edad)
+        BBaseDeDatosMemoria.arregloBiblioteca.forEachIndexed{ indice: Int, biblioteca : BBiblioteca ->
+            Log.i("testExamen","${biblioteca.idBiblioteca} -> ${biblioteca.nombreBiblioteca}")
+            if (indice == posicionbiblioteca){
+                txtInNombreBiblioteca.setText(biblioteca.nombreBiblioteca)
+                txtInYearFundacion.setText(biblioteca.yearFundacion)
+                txtInCiudad.setText(biblioteca.ciudad)
+                txtInDireccion.setText(biblioteca.direccion)
+                txtInTelefono.setText(biblioteca.telefono)
+
             }
         }
 
         val btnActualizarEditar = findViewById<Button>(R.id.btn_ActualizarEditar)
         btnActualizarEditar.setOnClickListener {
-            BBaseDeDatosMemoria.arregloEntrenador.forEachIndexed{ indice: Int, entrenador: BBiblioteca ->
-                if (indice == posicionEntrenador){
-                    Log.i("editar","${txtInNombreEditar.text.toString()}")
-                    entrenador.nombre = (txtInNombreEditar.text.toString())
-                    entrenador.edad = (txtInEdadEditar.text.toString())
+            BBaseDeDatosMemoria.arregloBiblioteca.forEachIndexed{ indice: Int, biblioteca: BBiblioteca ->
+                if (indice == posicionbiblioteca){
+                    Log.i("editar","${txtInNombreBiblioteca.text.toString()}")
+                    biblioteca.nombreBiblioteca = (txtInNombreBiblioteca.text.toString())
+                    biblioteca.yearFundacion = (txtInYearFundacion.text.toString())
+                    biblioteca.ciudad = (txtInCiudad.text.toString())
+                    biblioteca.direccion = (txtInDireccion.text.toString())
+                    biblioteca.telefono = (txtInTelefono.text.toString())
                 }
             }
             val intentEditSucces = Intent(this, GUI_Home::class.java)

@@ -7,7 +7,7 @@
     tools:context=".GUI_EditarBiblioteca">
 
     <TextView
-        android:id="@+id/tv_EditarEntrenador"
+        android:id="@+id/tv_EditarBiblioteca"
         android:layout_width="316dp"
         android:layout_height="86dp"
         android:layout_marginTop="10dp"
@@ -49,9 +49,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tv_EditarEntrenador"
-        app:layout_constraintStart_toStartOf="@+id/tv_EditarEntrenador"
-        app:layout_constraintTop_toBottomOf="@+id/tv_EditarEntrenador">
+        app:layout_constraintEnd_toEndOf="@+id/tv_EditarBiblioteca"
+        app:layout_constraintStart_toStartOf="@+id/tv_EditarBiblioteca"
+        app:layout_constraintTop_toBottomOf="@+id/tv_EditarBiblioteca">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,14 +74,14 @@
                 android:layout_marginTop="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtIn_NombreEntrenadorEditar"
+                    android:id="@+id/txtIn_BibliotecaEditar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="hint" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tv_YearFundacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
@@ -97,7 +97,7 @@
                 android:layout_marginTop="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtIn_EdadEditar"
+                    android:id="@+id/txtIn_YearFundacionEditar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="hint" />

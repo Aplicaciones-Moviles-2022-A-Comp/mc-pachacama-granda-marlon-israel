@@ -49,9 +49,9 @@ class GUI_Home : AppCompatActivity() {
             // Guardar las variables
             // primitivos
             putInt("idItemSeleccionado",idItemSeleccionado)
-            putParcelableArrayList("arregloEntrenador",BBaseDeDatosMemoria.arregloBiblioteca)
-            putParcelableArrayList("arregloEntrenadorXpokemon",BBaseDeDatosMemoria.arregloBibliotecaXLibro)
-            putParcelableArrayList("arregloPokemon",BBaseDeDatosMemoria.arregloLibro)
+            putParcelableArrayList("arregloBiblioteca",BBaseDeDatosMemoria.arregloBiblioteca)
+            putParcelableArrayList("arregloBibliotecaXLibro",BBaseDeDatosMemoria.arregloBibliotecaXLibro)
+            putParcelableArrayList("arregloLibro",BBaseDeDatosMemoria.arregloLibro)
         }
         super.onSaveInstanceState(outState)
     }
@@ -65,13 +65,13 @@ class GUI_Home : AppCompatActivity() {
         if (idItemSeleccionado == null){
             idItemSeleccionado = 0
         }
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_Bilioteca)
+        val listViewBiblioteca = findViewById<ListView>(R.id.lv_Bilioteca)
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
             BBaseDeDatosMemoria.arregloBiblioteca
         )
-        listViewEntrenador.adapter = adaptador
+        listViewBiblioteca.adapter = adaptador
         adaptador.notifyDataSetChanged()
     }
 

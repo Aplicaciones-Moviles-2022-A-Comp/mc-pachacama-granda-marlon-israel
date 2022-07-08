@@ -119,7 +119,7 @@ class GUI_Libro : AppCompatActivity() {
     ) {
         super.onCreateContextMenu(menu, v, menuInfo)
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu_Libro, menu)
+        inflater.inflate(R.menu.menu_pokemon, menu)
         val info = menuInfo as AdapterView.AdapterContextMenuInfo
         val id = info.position
         selectedItem = id
@@ -129,12 +129,12 @@ class GUI_Libro : AppCompatActivity() {
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.mi_editarLibro-> {
+            R.id.mi_editar-> {
                 Log.i("context-menu", "Edit position: ${idItemSeleccionado}")
                 abrirActividadEditarLibro(GUI_EditarLibro::class.java)
                 return true
             }
-            R.id.mi_eliminarLibro -> {
+            R.id.mi_eliminar -> {
                 Log.i("context-menu", "Delete position: ${idItemSeleccionado}")
                 eliminarLibro(idItemSeleccionado)
                 return true
@@ -148,7 +148,7 @@ class GUI_Libro : AppCompatActivity() {
     ) {
         val intentEditarLibro = Intent(this, clase)
         intentEditarLibro.putExtra("Libro", idItemSeleccionado)
-        intentEditarLibro.putExtra("posicionbibliotecaeditar",posicionbiblioteca)
+        intentEditarLibro.putExtra("posicionbibliotecaeditar",posicionBiblioteca)
         resultEditarLibro.launch(intentEditarLibro)
     }
 
@@ -156,8 +156,8 @@ class GUI_Libro : AppCompatActivity() {
         clase: Class<*>
     ) {
         val intentAddNewLibro = Intent(this, clase)
-        intentAddNewLibro.putExtra("posicionbiblioteca",posicionbiblioteca)
-        Log.i("positionSend","${posicionbiblioteca}")
+        intentAddNewLibro.putExtra("posicionbiblioteca",posicionBiblioteca)
+        Log.i("positionSend","${posicionBiblioteca}")
         resultAddNewLibro.launch(intentAddNewLibro)
     }
 
@@ -168,13 +168,13 @@ class GUI_Libro : AppCompatActivity() {
 
         var auxListabibliotecaXlibro = arrayListOf<BBibliotecaXLibro>()
 
-        BBaseDeDatosMemoria.arreglobibliotecaXlibro.forEach{ bibliotecaXlibro:BBibliotecaXLibro ->
-            if(idLibroAeliminar != bibliotecaXlibro.idBibliotecaXLibro){
+        BBaseDeDatosMemoria.arregloBibliotecaXLibro.forEach{ bibliotecaXlibro:BBibliotecaXLibro ->
+            if(idLibroAeliminar != bibliotecaXlibro.idBibliotecarXLibro){
                 auxListabibliotecaXlibro.add(bibliotecaXlibro)
             }
         }
 
-        BBaseDeDatosMemoria.arreglobibliotecaXlibro = auxListabibliotecaXlibro
+        BBaseDeDatosMemoria.arregloBibliotecaXLibro = auxListabibliotecaXlibro
 
         libroLista.removeAt(selectedItem)
 

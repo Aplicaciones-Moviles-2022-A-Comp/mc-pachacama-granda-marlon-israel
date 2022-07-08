@@ -15,91 +15,57 @@ class GUI_AnadirLibro : AppCompatActivity() {
 
     var nextId = 0
     var lastId = 0
+    var nombreLibro = ""
     var nombreBiblioteca = ""
-    var idTipoLibroSeleccionado = 0
-    var posicionLibro = 0
-    var idBibliotecaOwner = 0
+    var autor = ""
+    var yearEdicion = "0"
+    var categoria = "0"
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.i("ciclo-vida","onCreate")
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gui_anadir_libro)
+        setContentView(R.layout.activity_gui_anadir_biblioteca)
     }
 
     override fun onStart() {
         super.onStart()
         Log.i("ciclo-vida","onStart")
 
-        posicionLibro = intent.getIntExtra("posicionLibro",-1)
-
-        Log.i("posBiblioteca","${posicionLibro}")
-
-        val availablreLibros = arrayListOf<String>()
-
-        BBaseDeDatosMemoria.arregloLibro.forEachIndexed{ indice: Int, libro : BLibro ->
-            //Log.i("testExamen","${biblioteca.idbiblioteca} -> ${biblioteca.nombreBiblioteca}")
-            availablreLibros.add(libro.nombreBiblioteca.toString())
-        }
-
-        val spinnerTipolibro = findViewById<Spinner>(R.id.id_spinner_tipo_pokemon)
-        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,availablreLibros)
-        spinnerTipolibro.adapter = adaptador
-
-        spinnerTipolibro.onItemSelectedListener = object:
-            AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, positionTipolibro: Int, p3: Long) {
-                idTipoLibroSeleccionado = positionTipolibro + 1
-                Log.i("libro seleccionado","${idTipoLibroSeleccionado}")
-            }
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
-
-        }
+        var longitudListaBiblioteca = BBaseDeDatosMemoria.arregloBiblioteca.lastIndex
 
         BBaseDeDatosMemoria.arregloBiblioteca.forEachIndexed{ indice: Int, biblioteca : BBiblioteca ->
-            //Log.i("testExamen","${biblioteca.idbiblioteca} -> ${biblioteca.nombreBiblioteca}")
-            if (indice == posicionLibro){
-                idBibliotecaOwner = biblioteca.idBiblioteca
-            }
-        }
-
-        var longitudListalibro = BBaseDeDatosMemoria.arregloBibliotecaXLibro.lastIndex
-
-        BBaseDeDatosMemoria.arregloBibliotecaXLibro.forEachIndexed{ indice: Int, bibliotecaXlibro : BBibliotecaXLibro ->
-            Log.i("testExamen","${bibliotecaXlibro.nombreBilbiotecaXLibro} -> ${bibliotecaXlibro.idLibro}")
-            if (indice == longitudListalibro){
-                lastId = bibliotecaXlibro.idBibliotecarXLibro
+            Log.i("testExamen","${biblioteca.idBiblioteca} -> ${biblioteca.nombreBiblioteca}")
+            if (indice == longitudListaBiblioteca){
+                lastId = biblioteca.idBiblioteca
             }
         }
 
         nextId = lastId+1
 
-        var txtInNombreBiblioteca = findViewById<TextInputEditText>(R.id.txtIn_NombreLibro)
+        var txtInNombreLibro = findViewById<TextInputEditText>(R.id.txtIn_NombreLibro)
+        var txtInNombreBiblioteca = findViewById<TextInputEditText>(R.id.txtIn_NameBiblioteca)
+        var txtInAutor = findViewById<TextInputEditText>(R.id.txtIn_Autor)
+        var txtInYearEdicion = findViewById<TextInputEditText>(R.id.txtIn_YearEdicion)
+        var txtInCategoria = findViewById<TextInputEditText>(R.id.txtln_Categoria)
 
-        var btnAddlibro= findViewById<Button>(R.id.btn_AddBiblioteca)
+        var btnAddlibro = findViewById<Button>(R.id.btn_AddLibro)
         btnAddlibro.setOnClickListener {
-            var nombreBiblioteca = txtInNombreBiblioteca.text.toString()
-            BBaseDeDatosMemoria.arregloBibliotecaXLibro.add(
-                BBibliotecaXLibro(nextId,nombreBiblioteca,idBibliotecaOwner,idTipoLibroSeleccionado)
+            nombreLibro = txtInNombreLibro.text.toString()
+            nombreBiblioteca = txtInNombreBiblioteca.text.toString()
+            autor = txtInAutor.text.toString()
+            yearEdicion = txtInYearEdicion.text.toString()
+            categoria = txtInCategoria.text.toString()
+            BBaseDeDatosMemoria.arregloBiblioteca.add(
+                BBiblioteca(nextId,nombreLibro,nombreBiblioteca,autor,yearEdicion,categoria)
             )
-            devolverRespuesta()
+            val intentAddSucces = Intent(this, GUI_Home::class.java)
+            startActivity(intentAddSucces)
         }
 
-        var btnCancelarlibro = findViewById<Button>(R.id.btn_Cancellibro)
+        var btnCancelarlibro = findViewById<Button>(R.id.btn_CancelLibro)
         btnCancelarlibro.setOnClickListener {
-            devolverRespuesta()
+            val intentAddCancel = Intent(this, GUI_Home::class.java)
+            startActivity(intentAddCancel)
         }
-    }
-
-    fun devolverRespuesta(){
-        val intentDevolverParametros = Intent()
-        intentDevolverParametros.putExtra("posicionLibro",posicionLibro)
-        setResult(
-            RESULT_OK,
-            intentDevolverParametros
-        )
-        finish()
     }
 
 }

@@ -9,10 +9,9 @@ import com.google.android.material.textfield.TextInputEditText
 
 class GUI_EditarLibro : AppCompatActivity() {
 
-    var posicionEntrenador = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("ciclo-vida", "onCreate")
         setContentView(R.layout.activity_gui_editar_libro)
     }
 
@@ -20,55 +19,47 @@ class GUI_EditarLibro : AppCompatActivity() {
         Log.i("ciclo-vida", "onStart")
         super.onStart()
 
-        val idEntrenadoXPokemon = intent.getIntExtra("pokemon",1)
-        posicionEntrenador = intent.getIntExtra("posicionEntrenadoreditar",1)
+        val posicionlibro = intent.getIntExtra("posicionEditar",1)
 
-        val txtInNombreEditarPokemon = findViewById<TextInputEditText>(R.id.txtIn_NombrePokemonEdit)
-        val txtInEspecieEditarPokemon = findViewById<TextInputEditText>(R.id.txtIn_EspeciePokemonEdit)
-        val txtInTipoEditarPokemon = findViewById<TextInputEditText>(R.id.txtIn_TipoPokemonEdit)
+        var txtInNombreLibro = findViewById<TextInputEditText>(R.id.txtIn_NombreLibro)
+        var txtInNombreBiblioteca = findViewById<TextInputEditText>(R.id.txtIn_NombreBiblioteca)
+        var txtInAutor = findViewById<TextInputEditText>(R.id.txtIn_Autor)
+        var txtInYearEdicion = findViewById<TextInputEditText>(R.id.txtln_YearEdicion)
+        var txtInCategoria = findViewById<TextInputEditText>(R.id.txtln_Categoria)
 
-        var idPokemon: Int = 0
+        BBaseDeDatosMemoria.arregloLibro.forEachIndexed{ indice: Int, libro : BLibro ->
+            Log.i("testExamen","${libro.idLibro} -> ${libro.nombreLibro}")
+            if (indice == posicionlibro){
+                txtInNombreLibro.setText(libro.nombreLibro)
+                txtInNombreBiblioteca.setText(libro.nombreBiblioteca)
+                txtInAutor.setText(libro.autor)
+                txtInYearEdicion.setText(libro.yearEdicion)
+                txtInCategoria.setText(libro.categoria)
 
-        BBaseDeDatosMemoria.arregloEntrenadorXPokemon.forEachIndexed{ indice: Int, entrenadorXpokemon : BBibliotecaXLibro ->
-            if (idEntrenadoXPokemon == entrenadorXpokemon.idBEntrenadorXPokemon){
-                txtInNombreEditarPokemon.setText(entrenadorXpokemon.nombreEntrenadorXPokemon)
-                idPokemon = entrenadorXpokemon.idPokemon
             }
         }
 
-        BBaseDeDatosMemoria.arregloPokemon.forEachIndexed{ indice: Int, pokemon : BLibro ->
-            if (idPokemon == pokemon.idPokemon){
-                txtInEspecieEditarPokemon.setText(pokemon.nombre)
-                txtInTipoEditarPokemon.setText(pokemon.tipo)
-            }
-        }
-
-        val btnActualizarEditarPokemon = findViewById<Button>(R.id.btn_ActualizarEditarPokemon)
-        btnActualizarEditarPokemon.setOnClickListener {
-            BBaseDeDatosMemoria.arregloEntrenadorXPokemon.forEachIndexed{ indice: Int, entrenadorXpokemon: BBibliotecaXLibro ->
-                if (idEntrenadoXPokemon == entrenadorXpokemon.idBEntrenadorXPokemon){
-                    Log.i("editar","${txtInNombreEditarPokemon.text.toString()}")
-                    entrenadorXpokemon.nombreEntrenadorXPokemon = (txtInNombreEditarPokemon.text.toString())
+        val btnActualizarEditar = findViewById<Button>(R.id.btn_ActualizarEditar)
+        btnActualizarEditar.setOnClickListener {
+            BBaseDeDatosMemoria.arregloLibro.forEachIndexed{ indice: Int, libro: BLibro ->
+                if (indice == posicionlibro){
+                    Log.i("editar","${txtInNombreLibro.text.toString()}")
+                    libro.nombreLibro = (txtInNombreLibro.text.toString())
+                    libro.nombreBiblioteca = (txtInNombreBiblioteca.text.toString())
+                    libro.autor = (txtInAutor.text.toString())
+                    libro.yearEdicion = (txtInYearEdicion.text.toString())
+                    libro.categoria = (txtInCategoria.text.toString())
                 }
             }
-            devolverRespuesta()
+            val intentEditSucces = Intent(this, GUI_Home::class.java)
+            startActivity(intentEditSucces)
         }
 
-        val btnCancelarEditarPokemon = findViewById<Button>(R.id.btn_CancelarEditarPokemon)
-        btnCancelarEditarPokemon.setOnClickListener{
-            devolverRespuesta()
+        val btnCancelarEditar = findViewById<Button>(R.id.btn_CancelarEditar)
+        btnCancelarEditar.setOnClickListener{
+            val intentEditCancel = Intent(this, GUI_Home::class.java)
+            startActivity(intentEditCancel)
         }
 
     }
-
-    fun devolverRespuesta(){
-        val intentDevolverParametros = Intent()
-        intentDevolverParametros.putExtra("posicionEntrenadoreditar",posicionEntrenador)
-        setResult(
-            RESULT_OK,
-            intentDevolverParametros
-        )
-        finish()
-    }
-
 }

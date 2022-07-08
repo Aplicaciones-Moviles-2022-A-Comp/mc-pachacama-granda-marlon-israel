@@ -20,4 +20,20 @@
     <string name="yearfundaci_n">YearFundación:</string>
     <string name="lista_de_bibliotecas">Lista de Bibliotecas:</string>
     <string name="a_adi">Añadir</string>
+    <string name="nombre_de_la_biblioteca">Nombre de la Biblioteca</string>
+    <string name="a_o_de_fundaci_n">Año de Fundación</string>
+    <string name="t_lefono">Télefono</string>
+    <string name="nombre_de_la_bilioteca">Nombre de la bilioteca</string>
+    <string name="autor">Autor:</string>
+    <string name="nombre_del_libro">Nombre del libro:</string>
+    <string name="a_adir_nuevo_libro">Añadir Nuevo Libro</string>
+    <string name="cancela">cancelar</string>
+    <string name="edicion">edicion</string>
+    <string name="nombre_de_biblioteca">Nombre de la biblioteca:</string>
+    <string name="a_o_de_edici_n">Año de edición:</string>
+    <string name="categoria">Categoria:</string>
+    <string name="escritor">autor</string>
+    <string name="a_ade">añadir</string>
+    <string name="nombre_de_libro">Nombre del libro</string>
+    <string name="seccion">hint</string>
 </resources>
