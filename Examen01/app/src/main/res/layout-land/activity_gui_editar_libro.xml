@@ -4,52 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GUI_EditarLibro">
+    tools:context=".GUI_AnadirEntrenador">
+
+    <Button
+        android:id="@+id/btn_AddLibro"
+        android:layout_width="146dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="196dp"
+        android:text="Añadir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/scrollView4" />
+
+    <Button
+        android:id="@+id/btn_CancelLibro"
+        android:layout_width="146dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="100dp"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/scrollView4"
+        app:layout_constraintTop_toBottomOf="@+id/btn_AddLibro" />
 
     <TextView
-        android:id="@+id/lv_EditarPokemon"
-        android:layout_width="316dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="16dp"
-        android:text="Editar Datos Pokemon"
+        android:id="@+id/tv_AnadirLibro"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        android:text="Editar Libro"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_ActualizarEditarPokemon"
-        android:layout_width="146dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="208dp"
-        android:text="Guardar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/scrollView8" />
-
-    <Button
-        android:id="@+id/btn_CancelarEditarPokemon"
-        android:layout_width="146dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="108dp"
-        android:text="Cancelar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/scrollView8" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059" />
 
     <ScrollView
-        android:id="@+id/scrollView8"
-        android:layout_width="326dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/scrollView4"
+        android:layout_width="392dp"
+        android:layout_height="266dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/lv_EditarPokemon"
-        app:layout_constraintStart_toStartOf="@+id/lv_EditarPokemon"
-        app:layout_constraintTop_toBottomOf="@+id/lv_EditarPokemon">
+        app:layout_constraintEnd_toEndOf="@+id/tv_AnadirLibro"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_AnadirLibro"
+        app:layout_constraintTop_toBottomOf="@+id/tv_AnadirLibro"
+        app:layout_constraintVertical_bias="0.077">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,90 +62,132 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/lv_NombrePokemonEdit"
+                android:id="@+id/tv_NombreLibro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre:"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Nombre del Libro:"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout7"
+                android:id="@+id/textInputLayout"
                 android:layout_width="326dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="12dp">
+                android:layout_height="36dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtIn_NombrePokemonEdit"
+                    android:id="@+id/txtIn_NombreLibro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="hint" />
+                    android:hint="Ingrese su nombre"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/tv_EspeciePokemonEdit"
+                android:id="@+id/tv_NameBiblioteca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:text="Especie:"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/nombre_de_biblioteca"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout7"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout7"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout8"
+                android:id="@+id/textInputLayout2"
                 android:layout_width="326dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="12dp"
-                app:layout_constraintStart_toStartOf="@+id/tv_EspeciePokemonEdit"
-                app:layout_constraintTop_toBottomOf="@+id/tv_EspeciePokemonEdit">
+                android:layout_height="36dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtIn_EspeciePokemonEdit"
-                    android:enabled="false"
+                    android:id="@+id/txtIn_NameBiblioteca"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Ingrese su edad"
+                    android:inputType="number"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_Autor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Autor:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="326dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtln_Autor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_YearEdicion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Año de Edición:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="326dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtln_YearEdicion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_Categoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Categoria:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtln_Categoria"
+                android:layout_width="326dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="hint" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/tv_TipoPokemonEdit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:text="Tipo:"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout8"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout6"
-                android:layout_width="326dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="12dp"
-                app:layout_constraintEnd_toEndOf="@+id/tv_TipoPokemonEdit"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tv_TipoPokemonEdit"
-                app:layout_constraintTop_toBottomOf="@+id/tv_TipoPokemonEdit">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtIn_TipoPokemonEdit"
-                    android:enabled="false"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="hint" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
     </ScrollView>
 
