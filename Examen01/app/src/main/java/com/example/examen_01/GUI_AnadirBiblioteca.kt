@@ -41,7 +41,7 @@ class GUI_AnadirBiblioteca : AppCompatActivity() {
         var txtInYearFundacion = findViewById<TextInputEditText>(R.id.txtIn_YearFundacion)
         var txtInCiudad = findViewById<TextInputEditText>(R.id.txtIn_Ciudad)
         var txtInDireccion = findViewById<TextInputEditText>(R.id.txtln_Direccion)
-        var txtInTelefono = findViewById<TextInputEditText>(R.id.txtln_Categoria)
+        var txtInTelefono = findViewById<TextInputEditText>(R.id.txtln_Telefono)
 
 
 
@@ -53,7 +53,7 @@ class GUI_AnadirBiblioteca : AppCompatActivity() {
             direccion = txtInDireccion.text.toString()
             telefono = txtInTelefono.text.toString()
             BBaseDeDatosMemoria.arregloBiblioteca.add(
-                BBiblioteca(nextId,nombreBiblioteca, yearFundacion,ciudad,direccion,telefono)
+                BBiblioteca(nextId,nombreBiblioteca,yearFundacion,ciudad,direccion,telefono)
             )
             val intentAddSucces = Intent(this, GUI_Home::class.java)
             startActivity(intentAddSucces)

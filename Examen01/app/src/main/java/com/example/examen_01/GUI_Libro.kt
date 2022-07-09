@@ -76,7 +76,7 @@ class GUI_Libro : AppCompatActivity() {
         BBaseDeDatosMemoria.arregloBibliotecaXLibro.forEachIndexed{ indice: Int, bibliotecaXlibro : BBibliotecaXLibro ->
             if (idBibliotecaOwner == bibliotecaXlibro.idBiblioteca){
                 libroLista.add(bibliotecaXlibro.nombreBilbiotecaXLibro.toString())
-                idBibliotecaXLibro.add(bibliotecaXlibro.idBibliotecarXLibro)
+                idBibliotecaXLibro.add(bibliotecaXlibro.idBibliotecaXLibro)
             }
         }
 
@@ -104,7 +104,7 @@ class GUI_Libro : AppCompatActivity() {
         val btnVerBD = findViewById<Button>(R.id.btn_verBD)
         btnVerBD.setOnClickListener {
             BBaseDeDatosMemoria.arregloBibliotecaXLibro.forEach{ bibliotecaXlibro:BBibliotecaXLibro ->
-                Log.i("BD","${bibliotecaXlibro.idBibliotecarXLibro} -> ${bibliotecaXlibro.nombreBilbiotecaXLibro} -> ${bibliotecaXlibro.idBiblioteca} -> ${bibliotecaXlibro.idLibro}")
+                Log.i("BD","${bibliotecaXlibro.idBibliotecaXLibro} -> ${bibliotecaXlibro.nombreBilbiotecaXLibro} -> ${bibliotecaXlibro.idBiblioteca} -> ${bibliotecaXlibro.idLibro}")
             }
         }
 
@@ -169,7 +169,7 @@ class GUI_Libro : AppCompatActivity() {
         var auxListabibliotecaXlibro = arrayListOf<BBibliotecaXLibro>()
 
         BBaseDeDatosMemoria.arregloBibliotecaXLibro.forEach{ bibliotecaXlibro:BBibliotecaXLibro ->
-            if(idLibroAeliminar != bibliotecaXlibro.idBibliotecarXLibro){
+            if(idLibroAeliminar != bibliotecaXlibro.idBibliotecaXLibro){
                 auxListabibliotecaXlibro.add(bibliotecaXlibro)
             }
         }

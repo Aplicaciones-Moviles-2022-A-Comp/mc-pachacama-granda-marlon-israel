@@ -1,5 +1,6 @@
 package com.example.examen_01
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.activity.result.contract.ActivityResultContracts
 
 class GUI_Home : AppCompatActivity() {
 
@@ -24,22 +26,22 @@ class GUI_Home : AppCompatActivity() {
         super.onStart()
         Log.i("ciclo-vida", "onStart")
 
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_Bilioteca)
+        val listViewBiblioteca = findViewById<ListView>(R.id.lv_Bilioteca)
 
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
             BBaseDeDatosMemoria.arregloBiblioteca
         )
-        listViewEntrenador.adapter = adaptador
+        listViewBiblioteca.adapter = adaptador
         adaptador.notifyDataSetChanged()
 
-        this.registerForContextMenu(listViewEntrenador)
+        this.registerForContextMenu(listViewBiblioteca)
 
-        val btnAnadirEntrenador = findViewById<Button>(R.id.btn_AnadirBiblioteca)
-        btnAnadirEntrenador.setOnClickListener {
-            val intentAddEntrenador = Intent(this, GUI_AnadirBiblioteca::class.java)
-            startActivity(intentAddEntrenador)
+        val btnAnadirBiblioteca = findViewById<Button>(R.id.btn_AnadirBiblioteca)
+        btnAnadirBiblioteca.setOnClickListener {
+            val intentAddBiblioteca = Intent(this, GUI_AnadirBiblioteca::class.java)
+            startActivity(intentAddBiblioteca)
         }
 
     }
@@ -99,7 +101,7 @@ class GUI_Home : AppCompatActivity() {
             }
             R.id.mi_eliminar -> {
                 Log.i("context-menu", "Delete position: ${idItemSeleccionado}")
-                eliminarEntrenador(idItemSeleccionado)
+                eliminarBiblioteca(idItemSeleccionado)
                 return true
             }
             R.id.mi_libros -> {
@@ -114,36 +116,36 @@ class GUI_Home : AppCompatActivity() {
     fun abrirActividadConParametros(
         clase: Class<*>
     ) {
-        val intentEditarEntrenador = Intent(this, clase)
-        intentEditarEntrenador.putExtra("posicionEditar", idItemSeleccionado)
-        startActivity(intentEditarEntrenador)
+        val intentEditarBiblioteca = Intent(this, clase)
+        intentEditarBiblioteca.putExtra("posicionEditar", idItemSeleccionado)
+        startActivity(intentEditarBiblioteca)
     }
 
-    fun eliminarEntrenador(
-        posicioEntrenadorEnliminar: Int
+    fun eliminarBiblioteca(
+        posicionBibliotecaEliminar: Int
     ) {
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_Bilioteca)
+        val listViewBiblioteca = findViewById<ListView>(R.id.lv_Bilioteca)
 
-        var entrenadorAeliminar = BBaseDeDatosMemoria.arregloBiblioteca.elementAt(posicioEntrenadorEnliminar)
-        var idEntrenadorAeliminar = entrenadorAeliminar.idBiblioteca
+        var bibliotecaAeliminar = BBaseDeDatosMemoria.arregloBiblioteca.elementAt(posicionBibliotecaEliminar)
+        var idBibliotecaAeliminar = bibliotecaAeliminar.idBiblioteca
 
-        var auxListaEntrenadorXpokemon = arrayListOf<BBibliotecaXLibro>()
+        var auxListabibliotecaXlibro = arrayListOf<BBibliotecaXLibro>()
 
-        BBaseDeDatosMemoria.arregloBibliotecaXLibro.forEachIndexed{ indice: Int, entrenadorXpokemon: BBibliotecaXLibro ->
-            if(idEntrenadorAeliminar != entrenadorXpokemon.idBiblioteca){
-                auxListaEntrenadorXpokemon.add(entrenadorXpokemon)
+        BBaseDeDatosMemoria.arregloBibliotecaXLibro.forEachIndexed{ indice: Int, bibliotecaXlibro: BBibliotecaXLibro ->
+            if(idBibliotecaAeliminar != bibliotecaXlibro.idBiblioteca){
+                auxListabibliotecaXlibro.add(bibliotecaXlibro)
             }
         }
 
-        BBaseDeDatosMemoria.arregloBiblioteca.removeAt(posicioEntrenadorEnliminar)
-        BBaseDeDatosMemoria.arregloBibliotecaXLibro = auxListaEntrenadorXpokemon
+        BBaseDeDatosMemoria.arregloBiblioteca.removeAt(posicionBibliotecaEliminar)
+        BBaseDeDatosMemoria.arregloBibliotecaXLibro = auxListabibliotecaXlibro
 
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
             BBaseDeDatosMemoria.arregloBiblioteca
         )
-        listViewEntrenador.adapter = adaptador
+        listViewBiblioteca.adapter = adaptador
         adaptador.notifyDataSetChanged()
     }
 }

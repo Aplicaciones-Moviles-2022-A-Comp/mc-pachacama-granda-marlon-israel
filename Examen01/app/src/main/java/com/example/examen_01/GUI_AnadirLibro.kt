@@ -23,19 +23,19 @@ class GUI_AnadirLibro : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gui_anadir_biblioteca)
+        setContentView(R.layout.activity_gui_anadir_libro)
     }
 
     override fun onStart() {
         super.onStart()
         Log.i("ciclo-vida","onStart")
 
-        var longitudListaBiblioteca = BBaseDeDatosMemoria.arregloBiblioteca.lastIndex
+        var longitudListaLibro = BBaseDeDatosMemoria.arregloLibro.lastIndex
 
-        BBaseDeDatosMemoria.arregloBiblioteca.forEachIndexed{ indice: Int, biblioteca : BBiblioteca ->
-            Log.i("testExamen","${biblioteca.idBiblioteca} -> ${biblioteca.nombreBiblioteca}")
-            if (indice == longitudListaBiblioteca){
-                lastId = biblioteca.idBiblioteca
+        BBaseDeDatosMemoria.arregloLibro.forEachIndexed{ indice: Int, libro : BLibro ->
+            Log.i("testExamen","${libro.idLibro} -> ${libro.nombreLibro}")
+            if (indice == longitudListaLibro){
+                lastId = libro.idLibro
             }
         }
 

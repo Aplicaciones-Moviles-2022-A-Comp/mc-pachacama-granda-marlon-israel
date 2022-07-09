@@ -5,7 +5,7 @@ import android.os.Parcelable
 
 class BBibliotecaXLibro (
 
-    val idBibliotecarXLibro: Int,
+    val idBibliotecaXLibro: Int,
     var nombreBilbiotecaXLibro: String?,
     val idBiblioteca: Int,
     val idLibro: Int
@@ -25,7 +25,7 @@ class BBibliotecaXLibro (
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(idBibliotecarXLibro)
+        parcel.writeInt(idBibliotecaXLibro)
         parcel.writeString(nombreBilbiotecaXLibro)
         parcel.writeInt(idBiblioteca)
         parcel.writeInt(idLibro)
