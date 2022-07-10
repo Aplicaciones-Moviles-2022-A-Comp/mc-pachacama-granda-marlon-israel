@@ -7,7 +7,7 @@
         android:id="@+id/mi_eliminar"
         android:title="Eliminar" />
     <item
-        android:id="@+id/mi_pokemons"
-        android:title="Ver Pokemons" />
+        android:id="@+id/mi_libros"
+        android:title="Ver Libros" />
 
 </menu>

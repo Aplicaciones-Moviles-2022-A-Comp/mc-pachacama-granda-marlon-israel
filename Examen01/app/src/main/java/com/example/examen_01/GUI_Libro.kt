@@ -119,7 +119,7 @@ class GUI_Libro : AppCompatActivity() {
     ) {
         super.onCreateContextMenu(menu, v, menuInfo)
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu_pokemon, menu)
+        inflater.inflate(R.menu.menu_libro, menu)
         val info = menuInfo as AdapterView.AdapterContextMenuInfo
         val id = info.position
         selectedItem = id

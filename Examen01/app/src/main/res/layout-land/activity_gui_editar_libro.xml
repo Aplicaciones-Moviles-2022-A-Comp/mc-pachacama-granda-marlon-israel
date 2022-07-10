@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GUI_AnadirEntrenador">
+    tools:context=".GUI_AnadirLibro">
 
     <Button
         android:id="@+id/btn_AddLibro"
