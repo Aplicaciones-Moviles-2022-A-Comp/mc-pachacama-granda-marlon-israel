@@ -1,0 +1,61 @@
+Aplicación tipo red social, enfocada en recetas
+
+Dentro de esta app se pordra realizar publicaciones de las direferentes recetas en conjunto 
+con una lista de ingredientes y acotaciones relacionadas a las caracteristicas de de la 
+preparación de la receta
+
+Authentication
+	Se usará el servicio de autenticación para gestionar el login de los usuario
+Cloud Firestore
+	Se utilizará el servicios de Firestore para almacenar información de los usuarios
+Storage
+	Almacenará fotos de los platillos finales o de los ingredientes utilizados en cada
+	receta
+Hosting
+	Se utilzará este servicio para la dar hosting a la aplicación en donde exista demanda
+	de la misma
+Functions
+	Este servicio permitirá reescalar las imagenes de los platillos finales o de los 
+	ingredientes utilizados, estandarizando el tamaño de todas las imagenes
+Machine Learning
+	Se utilizará algoritmos de machine learning para realizar recomendaciones a los 
+	usuarios en base a las recetas que han visitado anteriormente o en base a las 
+	busquedas de recetas realizadas
+Crashlytics
+	Analisis de causas en fallos relacionados con la aplicación 
+Performance
+	Obtener información sobre el desempeño de la aplicación dependiendo del tipo de 
+	dispositivo, versión de la app, y ubicaicón del usuario
+Test Lab
+	Se utilizará este servicio para garantizar que el correcto despliege de los elementos
+	de la aplicación en los diferentes tamaños de los dispositivos.
+App distribution
+	Se usará en conjunto con crashlytics para realizar un control de la estabilidad
+	de as versiones de la aplicación
+A/B testing 
+	Nos ayudará a crear segmentación de los usuarios, creando un grupo especifico al cual
+	ira dirigido nuevas caracteristicas de la aplicaicón.
+Cloud Messaging
+	Permitirá implementar notificaciones mediante mensajes a la aplicación, notificando
+	si alguna persona esta interesada en alguna receta posteada por el usuario o si alguien
+	ha dejado alguna reseña.
+In App Messaging 
+	Este servicio se utilzará para notificar el grado de aceptación de las recetas posteadas
+	por un usuario en especifico. Ejemplo, si todas las recetas posteadas por X usuario
+	reciben una puntuación de 5 estrellas, este recibira una notificación, comunicando 
+	que ha subido de rango a chef 5 estrellas
+Remote config
+	Este servicio se utilizará para probar nuevas funcionalidades dirigidas al grupo de 
+	testeo creado con la herramienta A/B testing
+Dynamic Links
+	En caso de que los clientes esten interesados en comprar los ingredientes especificos
+	de una receta de su agrado, se utilizará la funcionalidad de dynamic links para
+	redirigir a la tienda mas cercana que posea dicho producto en especifico.
+AdMob
+	Se estableceran algunos tipos de publicaciones de recetas, por ejemplo. Una persona
+	publica su receta y todos pueden verla. Pero algunas personas tal vez desean recibir
+	cierta ganancia por compartir alguna receta especial, por lo que para ver dicha receta
+	se tendrá que pagar una pequeña comisión en la moneda de la app establecida por el usuario.
+	Esta moneda de la aplicación se podra obtener mediante la compra de paquetes. Por ejemplo,
+	podrás recibir 10 diamantes por 5 dolares. O, por otro lado podrás ganas 0.1 diamantes 
+	por cada video publicitaria que alguien vea. Esta publicidad será manejada por AdMob
