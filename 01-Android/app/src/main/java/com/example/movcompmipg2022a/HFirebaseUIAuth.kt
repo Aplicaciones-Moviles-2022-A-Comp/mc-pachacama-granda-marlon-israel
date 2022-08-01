@@ -8,6 +8,9 @@ import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.IdpResponse
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class HFirebaseUIAuth : AppCompatActivity() {
     private val signInLauncher = registerForActivityResult(
@@ -56,6 +59,33 @@ class HFirebaseUIAuth : AppCompatActivity() {
         val btnLogout = findViewById<Button>(R.id.btn_logout)
         btnLogout.visibility = View.VISIBLE
         btnLogin.visibility = View.INVISIBLE
+        if(res.isNewUser == true){
+            registrarUsuarioPorPrimeraVez(res)
+        }
+    }
+
+    fun registrarUsuarioPorPrimeraVez(usuario: IdpResponse){
+        val usuarioLogeado = FirebaseAuth.getInstance().currentUser
+        if(usuario.email != null && usuarioLogeado != null){
+            val  db = Firebase.firestore //obtenemos referencia
+            val roles = arrayListOf("Usuario") //creamos el arreglo de permiso
+            val email =usuarioLogeado.email//correo
+            val uid = usuarioLogeado.uid//identificador
+            val nuevoUsuario = hashMapOf<String,Any>(
+                "roles" to roles,
+                "uid" to uid,
+                "email" to email.toString()
+            )
+            db.collection("usuario")
+                .document(email.toString())
+                .set(nuevoUsuario)
+                .addOnSuccessListener {
+                    //Se creo el usuario
+                }
+                .addOnFailureListener{
+                    //Hubo errores creandio el usuario
+                }
+        }
     }
         fun seDeslogeo(){
             val btnLogin = findViewById<Button>(R.id.btn_intent_firebase_ui)
