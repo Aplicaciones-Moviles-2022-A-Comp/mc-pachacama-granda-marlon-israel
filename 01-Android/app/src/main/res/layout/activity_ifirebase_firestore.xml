@@ -10,9 +10,9 @@
         android:id="@+id/btn_fs_datos_prueba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="52dp"
-        android:text="C DATOS"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:text="C. DATOS"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,11 +20,12 @@
         android:id="@+id/btn_fs_order_by"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:text="ORDER BY"
         app:layout_constraintBottom_toBottomOf="@+id/btn_fs_datos_prueba"
+        app:layout_constraintStart_toEndOf="@+id/btn_fs_datos_prueba"
         app:layout_constraintTop_toTopOf="@+id/btn_fs_datos_prueba"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="192dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lv_firestore"
@@ -36,4 +37,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.895" />
+
+    <Button
+        android:id="@+id/btn_fs_odoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="DOCUMNETO"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_fs_order_by"
+        app:layout_constraintStart_toEndOf="@+id/btn_fs_order_by"
+        app:layout_constraintTop_toTopOf="@+id/btn_fs_order_by"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -95,24 +95,24 @@ class MainActivity : AppCompatActivity() {
                 irActividad(ECrudEntrenador::class.java)
             }
 
+
         val botonRecyclerView = findViewById<Button>(R.id.btn_recycler_view)
         botonRecyclerView
             .setOnClickListener {
                 irActividad(GRecyclerView::class.java)
             }
 
-        val botonFirebase = findViewById<Button>(R.id.btn_ir_firebase)
-        botonFirebase
+        val botonIrFirebase = findViewById<Button>(R.id.btn_ir_firebase)
+        botonIrFirebase
             .setOnClickListener {
                 irActividad(HFirebaseUIAuth::class.java)
             }
 
-        val botonFirestore = findViewById<Button>(R.id.btn_ir_firestore)
-        botonFirestore
+        val botonIrFirestore = findViewById<Button>(R.id.btn_ir_firestore)
+        botonIrFirestore
             .setOnClickListener {
                 irActividad(IFirebaseFirestore::class.java)
             }
-
     }
 
 
@@ -141,4 +141,3 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-

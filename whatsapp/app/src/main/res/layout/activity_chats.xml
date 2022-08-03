@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    tools:context=".activity_chats">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_chat"
+        android:layout_width="64dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:translationX="10dp"
+        android:translationY="35dp"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0.5dp"
+        app:layout_constraintEnd_toStartOf="@+id/txt_chat_nombre"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingClass" />
+
+    <TextView
+        android:id="@+id/txt_chat_nombre"
+        android:layout_width="152dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="28dp"
+        android:hint="CONTACTO"
+        android:textAlignment="textStart"
+        android:textSize="25sp"
+        android:translationY="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_chats"
+        android:layout_width="393dp"
+        android:layout_height="504dp"
+        android:layout_marginTop="40dp"
+        android:translationY="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_chat_nombre"
+        app:layout_constraintVertical_bias="0.031" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_chats"
+        app:layout_constraintVertical_bias="1.0">
+
+        <EditText
+            android:id="@+id/txt_mensaje_chats"
+            android:layout_width="272dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Mensaje"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:translationX="20dp" />
+
+        <ImageView
+            android:id="@+id/btn_enviar"
+            android:layout_width="10dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            android:translationY="10dp"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
