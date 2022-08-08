@@ -4,8 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class BBiblioteca (
-
-    val idBiblioteca: Int,
+    var id: Int?,
     var nombreBiblioteca: String?,
 	var yearFundacion: String?,
     var ciudad: String?,
@@ -14,29 +13,35 @@ class BBiblioteca (
 
 ) : Parcelable {
 
-    override fun toString(): String {
-        return "${nombreBiblioteca}"
-    }
-
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString()
+        parcel.readString(),
     ) {
     }
+    override fun toString(): String {
+        return  "Name of Biliotec =${nombreBiblioteca}\n" +
+                "Year of Fundation: = ${yearFundacion}\n" +
+                "City: ${ciudad} \n" +
+                "Addres: ${direccion} \n" +
+                "Telephone: ${telefono} \n"
 
+    }
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(idBiblioteca)
+        if(id !=null){
+            parcel.writeInt(id!!)
+        }else{
+            parcel.writeInt(0)
+        }
         parcel.writeString(nombreBiblioteca)
-        parcel.writeString(yearFundacion)
+        parcel.writeValue(yearFundacion)
         parcel.writeString(ciudad)
         parcel.writeString(direccion)
         parcel.writeString(telefono)
     }
-
     override fun describeContents(): Int {
         return 0
     }

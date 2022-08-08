@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03A9F4"
+    tools:context=".CrearBiblioteca">
+
+    <EditText
+        android:id="@+id/txtYearFoundation"
+        android:layout_width="313dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:hint="YearFoundation"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtnewNombreBiblioteca" />
+
+    <EditText
+        android:id="@+id/txtNewCity"
+        android:layout_width="313dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:hint="City"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtYearFoundation" />
+
+    <EditText
+        android:id="@+id/txtnewNombreBiblioteca"
+        android:layout_width="313dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="24dp"
+        android:hint="NameOfBibliotec"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloBiblioteca" />
+
+    <Button
+        android:id="@+id/btnCrearBiblioteca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF403C36"
+        android:text="Crear Biblioteca"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.607" />
+
+    <EditText
+        android:id="@+id/txtNewAddress"
+        android:layout_width="313dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:hint="Address"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNewCity" />
+
+    <TextView
+        android:id="@+id/txtTituloBiblioteca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Crear Nueva Biblioteca"
+        app:layout_constraintBottom_toTopOf="@+id/txtIngrediente1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752"
+        tools:ignore="UnknownId" />
+
+    <EditText
+        android:id="@+id/txtNewTelephone"
+        android:layout_width="313dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Telephone"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNewAddress" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

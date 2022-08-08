@@ -4,8 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class BLibro (
-
-    val idLibro: Int,
+    var id: Int?,
     var nombreLibro:String?,
     var nombreBiblioteca: String?,
 	var autor: String?,
@@ -22,9 +21,19 @@ class BLibro (
         parcel.readString(),
     ) {
     }
-
+    override fun toString(): String {
+        return "Name of Book ${nombreLibro}\n " +
+                "Namw of Bibliotec: ${nombreBiblioteca}\n " +
+                "Auhot: $autor \n" +
+                "Year of Edition: $yearEdicion \n " +
+                "Category: ${categoria} "
+    }
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(idLibro)
+        if(id !=null){
+            parcel.writeInt(id!!)
+        }else{
+            parcel.writeInt(0)
+        }
         parcel.writeString(nombreLibro)
         parcel.writeString(nombreBiblioteca)
         parcel.writeString(autor)

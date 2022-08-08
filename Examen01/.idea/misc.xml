@@ -15,6 +15,11 @@
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout-land/activity_gui_home.xml" value="0.33" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout-land/activity_gui_libro.xml" value="0.2" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout-land/activity_gui_pokemon.xml" value="0.33" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_biblioteca.xml" value="0.22" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_crear_biblioteca.xml" value="0.3956442831215971" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_crear_libro.xml" value="0.22" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_editar_biblioteca.xml" value="0.5" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_editar_libro.xml" value="0.2730627306273063" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_gui_anadir_biblioteca.xml" value="0.22" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_gui_anadir_entrenador.xml" value="0.33" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_gui_anadir_entrenador1.xml" value="0.33" />
@@ -27,7 +32,8 @@
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_gui_home.xml" value="0.2" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_gui_libro.xml" value="0.25" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_gui_pokemon.xml" value="0.33" />
-        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_libro.xml" value="0.33" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/menu/menu.xml" value="0.33" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/menu/menu_pokemon.xml" value="0.33" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/Examen01/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1695" />
@@ -44,7 +50,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.2" />
+        <option name="scale" value="0.22" />
       </ProjectState>
     </option>
   </component>

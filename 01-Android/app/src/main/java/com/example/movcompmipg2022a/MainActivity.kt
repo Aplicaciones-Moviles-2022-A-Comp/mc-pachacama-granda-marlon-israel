@@ -95,7 +95,6 @@ class MainActivity : AppCompatActivity() {
                 irActividad(ECrudEntrenador::class.java)
             }
 
-
         val botonRecyclerView = findViewById<Button>(R.id.btn_recycler_view)
         botonRecyclerView
             .setOnClickListener {
