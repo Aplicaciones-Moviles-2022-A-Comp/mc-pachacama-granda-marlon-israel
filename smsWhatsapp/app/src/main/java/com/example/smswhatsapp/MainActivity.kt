@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
 
         etMsj = findViewById(R.id.editTextPersonName)
         etCel = findViewById(R.id.editTextPersonNumber)
-
         btnW = findViewById(R.id.btnW)
         btnSelec = findViewById(R.id.btnSelec)
 
@@ -92,10 +91,8 @@ class MainActivity : AppCompatActivity() {
             val uri = data!!.data
             val cursor = contentResolver.query(uri!!, null, null, null, null)
             if (cursor != null && cursor.moveToFirst()) {
-                val indiceName =
-                    cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
-                val indiceNumber =
-                    cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
+                val indiceName = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
+                val indiceNumber = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
                 val nombre = cursor.getString(indiceName)
                 var numero = cursor.getString(indiceNumber)
                 numero = numero.replace("(", "").replace(")", "").replace(" ", "").replace("-", "")
