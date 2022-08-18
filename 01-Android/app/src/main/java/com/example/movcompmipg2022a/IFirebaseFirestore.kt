@@ -6,16 +6,20 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QueryDocumentSnapshot
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.util.*
+import kotlin.collections.ArrayList
 
 class IFirebaseFirestore : AppCompatActivity() {
 
+    var query: Query? = null
 
     val arreglo: ArrayList<ICitiesDto> = arrayListOf()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ifirebase_firestore)
@@ -68,8 +72,6 @@ class IFirebaseFirestore : AppCompatActivity() {
                 }
         }
 
-
-
         val botonFirebaseIndiceCompuesto = findViewById<Button>(R.id.btn_fs_ind_comp)
         botonFirebaseIndiceCompuesto.setOnClickListener {
             limpiarArreglo()
@@ -84,6 +86,117 @@ class IFirebaseFirestore : AppCompatActivity() {
                         anadirAArregloCiudad(arreglo, ciudad, adaptador)
                     }
                 }
+        }
+
+        val botonFirebaseCrear = findViewById<Button>(R.id.btn_fs_crear)
+        botonFirebaseCrear.setOnClickListener {
+            val db = Firebase.firestore
+            val referenciaEstudianteEjemplo = db
+                .collection("ejemplo")
+                .document("123456789")
+                .collection("estudiante")
+            val identificador = Date().time
+            val datosEstudiante = hashMapOf(
+                "nombrwe" to "Marlon",
+                "graduado" to false,
+                "promedio" to 14.00,
+                "direccion" to hashMapOf(
+                    "direccion" to "Mitad del Mundo",
+                    "numeorCalle" to 1234
+                ),
+                "materias" to listOf("web", "moviles")
+            )
+            //con identificador quemado
+            referenciaEstudianteEjemplo
+                .document("123456789")
+                .set(datosEstudiante)
+                .addOnCompleteListener {/*Si todo salio bien*/ }
+                .addOnFailureListener {/*Si algo salio mal*/ }
+
+            //sin identificador generado en  Date.time
+            referenciaEstudianteEjemplo
+                .document(identificador.toString())
+                .set(datosEstudiante)
+                .addOnCompleteListener {/*Si todo salio bien*/ }
+                .addOnFailureListener {/*Si algo salio mal*/ }
+
+            //sin identificador
+            referenciaEstudianteEjemplo
+                .add(datosEstudiante)
+                .addOnCompleteListener {/*Si todo salio bien*/ }
+                .addOnFailureListener {/*Si algo salio mal*/ }
+        }
+
+        val botonFirebaseEliminar = findViewById<Button>(R.id.btn_fs_eliminar)
+        botonFirebaseEliminar.setOnClickListener {
+            val db = Firebase.firestore
+            val referenciaEstudianteEjemplo = db
+                .collection("ejemplo")
+                .document("123456789")
+                .collection("estudiante")
+
+            //con identificador quemado
+            referenciaEstudianteEjemplo
+                .document("123456789")
+                .delete()
+                .addOnCompleteListener {/*Si todo salio bien*/ }
+                .addOnFailureListener {/*Si algo salio mal*/ }
+        }
+
+        val botonFirebaseEmpezarPaginar = findViewById<Button>(R.id.btn_fs_epaginar)
+        botonFirebaseEmpezarPaginar.setOnClickListener {
+            query = null
+            consultarCiudades(adaptador)
+        }
+
+        val botonFirebasePaginar = findViewById<Button>(R.id.btn_fs_paginar)
+        botonFirebasePaginar.setOnClickListener {
+            query = null
+            consultarCiudades(adaptador)
+        }
+
+    }
+
+    fun consultarCiudades(
+        adaptador: ArrayAdapter<ICitiesDto>
+    ) {
+        val db = Firebase.firestore
+
+        val citiesRef = db
+            .collection("cities")
+            .orderBy("population")
+            .limit(1)
+
+        var tarea: Task<QuerySnapshot>? = null
+        if (query == null) {
+            tarea = citiesRef.get()//1era vez
+            limpiarArreglo()
+            adaptador.notifyDataSetChanged()
+        } else {
+            tarea = query!!.get()//consulta de la consulta anterior empezando en el nuevo documento
+        }
+        if (tarea != null) {
+            tarea
+                .addOnSuccessListener { documentSnapshots ->
+                    guardarQuery(documentSnapshots, citiesRef)
+                    for (ciudad in documentSnapshots) {
+                        anadirAArregloCiudad(arreglo, ciudad, adaptador)
+                    }
+                    adaptador.notifyDataSetChanged()
+                }
+                .addOnFailureListener {
+                    //si hay fallos
+                }
+        }
+    }
+
+    fun guardarQuery(documentSnapshot: QuerySnapshot, refCities: Query){
+        if(documentSnapshot.size() > 0){
+            val ultimoDocumento = documentSnapshot.documents[documentSnapshot.size() - 1]
+            query = refCities
+                .startAfter(ultimoDocumento)
+        }else{
+
         }
     }
 

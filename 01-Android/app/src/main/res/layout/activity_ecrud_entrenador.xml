@@ -34,13 +34,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:text="ACTUALIZAR"
-        app:layout_constraintEnd_toStartOf="@+id/btn_eliminar"
+        app:layout_constraintEnd_toStartOf="@+id/btn_fs_eliminar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btn_crear"
         app:layout_constraintTop_toBottomOf="@+id/btn_crear" />
 
     <Button
-        android:id="@+id/btn_eliminar"
+        android:id="@+id/btn_fs_eliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"

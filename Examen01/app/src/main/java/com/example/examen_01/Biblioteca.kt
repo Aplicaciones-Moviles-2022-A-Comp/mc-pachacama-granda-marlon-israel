@@ -31,7 +31,7 @@ class Biblioteca : AppCompatActivity() {
                 val nuevaDireccion = data?.getStringExtra("nuevoProvinciaPlato").toString()
                 val nuevoTelefono = data?.getStringExtra("nuevaDescripcionPlato").toString()
 
-                BBaseDeDatosMemoria.arregloBBiblioteca.add(BBiblioteca(nuevoNombreBiblioteca, nuevoYearFoundation, nuevaCiudad, nuevaDireccion, nuevoTelefono))
+                BBaseDeDatosMemoria.arregloBBiblioteca.add(BBiblioteca(1,nuevoNombreBiblioteca, nuevoYearFoundation, nuevaCiudad, nuevaDireccion, nuevoTelefono))
                 val adaptador = ArrayAdapter(
                     this, // Contexto
                     android.R.layout.simple_list_item_1, // como se va a ver (XML)

@@ -10,15 +10,15 @@ class BBaseDeDatosMemoria {
         init {
             arregloBBiblioteca
                 .add(
-                    BBiblioteca("Biblioteca Central", "1918", "Quito", "Av. America", "2934568")
+                    BBiblioteca(1,"Biblioteca Central", "1918", "Quito", "Av. America", "2934568")
                 )
             arregloBBiblioteca
                 .add(
-                    BBiblioteca("Biblioteca ESPE", "1920", "Quito", "Av. Sangolqui", "2768908")
+                    BBiblioteca(2,"Biblioteca ESPE", "1920", "Quito", "Av. Sangolqui", "2768908")
                 )
             arregloBBiblioteca
                 .add(
-                    BBiblioteca("Biblioteca UDLA", "1922", "Quito", "Av. Cumbaya", "2912345")
+                    BBiblioteca(3,"Biblioteca UDLA", "1922", "Quito", "Av. Cumbaya", "2912345")
                 )
 
         }
