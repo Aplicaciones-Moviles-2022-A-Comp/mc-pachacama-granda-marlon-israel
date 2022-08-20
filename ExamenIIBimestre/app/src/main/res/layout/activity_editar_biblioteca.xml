@@ -48,14 +48,14 @@
         android:text="salir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_editar_nombre_biblioteca"
-        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_editar_nombre_biblioteca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="100dp"
         android:layout_marginBottom="356dp"
         android:text="editar"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -3,15 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/layout/activity_biblioteca.xml" value="0.22" />
-        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/layout/activity_crear_biblioteca.xml" value="0.5" />
-        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/layout/activity_crear_libros.xml" value="0.33" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/layout/activity_crear_biblioteca.xml" value="0.25" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/layout/activity_crear_libros.xml" value="0.25" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/layout/activity_editar_biblioteca.xml" value="0.33" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/layout/activity_editar_libro.xml" value="0.33" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/layout/activity_ver_libros.xml" value="0.25" />
-        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/menu/menu_biblioteca.xml" value="0.33" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/menu/menu_biblioteca.xml" value="0.2" />
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/menu/menu_libro.xml" value="0.25" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ExamenIIBimestre/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>
   </component>
@@ -20,12 +23,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.33" />
-      </ProjectState>
-    </option>
   </component>
 </project>

@@ -43,7 +43,7 @@
         android:id="@+id/btn_salir_editar_libro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
+        android:layout_marginStart="100dp"
         android:layout_marginBottom="64dp"
         android:text="Salir"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,8 +58,8 @@
         android:text="Editar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintHorizontal_bias="0.251"
         app:layout_constraintStart_toEndOf="@+id/btn_salir_editar_libro"
         app:layout_constraintTop_toBottomOf="@+id/et_nuevo_nombre_libro"
-        app:layout_constraintVertical_bias="0.351" />
+        app:layout_constraintVertical_bias="0.356" />
 </androidx.constraintlayout.widget.ConstraintLayout>
