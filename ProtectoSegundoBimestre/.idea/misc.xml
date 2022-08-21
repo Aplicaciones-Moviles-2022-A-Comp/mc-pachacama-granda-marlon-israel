@@ -4,6 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_gui_change_password.xml" value="0.22" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_gui_help.xml" value="0.25" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_gui_home_account.xml" value="0.22" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_gui_login_password.xml" value="0.16" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_gui_new_transaction.xml" value="0.25" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_gui_result_transaction.xml" value="0.2" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_gui_select_type_login.xml" value="0.33" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_gui_transactions_historial.xml" value="0.6319444444444444" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_gui_user_profile.xml" value="0.2" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/card_view_transaction_historial.xml" value="0.25" />
+        <entry key="..\:/Users/marlon.pachacama/Downloads/GitHub/mc-pachacama-granda-marlon-israel/ProtectoSegundoBimestre/app/src/main/res/layout/layout_child.xml" value="0.22083333333333333" />
       </map>
     </option>
   </component>
@@ -12,5 +23,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

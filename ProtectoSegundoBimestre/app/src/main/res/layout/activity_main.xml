@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="103dp"
-        android:text="Poli Banco"
-        android:textColor="#C83636"
+        android:text="Easy Bank"
+        android:textColor="#84b816"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,21 +22,21 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="-10dp"
+        android:layout_width="409dp"
+        android:layout_height="215dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/startback" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="104dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/startlogo" />
@@ -56,23 +56,24 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="295dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="349dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="40dp"
         android:text="Transfiere dinero de forma fácil, rápida y segura"
         android:textColor="#0E2240"
         android:textSize="24sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.741"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="112dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/threepoints" />
@@ -81,16 +82,16 @@
         android:id="@+id/btn_start_app"
         android:layout_width="262sp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
         android:text="Iniciar Sesión"
         android:textAllCaps="false"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:backgroundTint="#C83636"
+        app:backgroundTint="#84b816"
         app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
