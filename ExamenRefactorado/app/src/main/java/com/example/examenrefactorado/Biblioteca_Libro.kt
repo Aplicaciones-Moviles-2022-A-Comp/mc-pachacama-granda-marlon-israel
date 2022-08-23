@@ -11,7 +11,6 @@ class Biblioteca_Libro (
 
 ) : Parcelable {
 
-
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readInt(),

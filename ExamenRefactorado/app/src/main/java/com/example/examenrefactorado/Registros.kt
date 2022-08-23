@@ -7,7 +7,6 @@ class Registros{
 
         init {
             // Bibliotecas
-
             BibliotecaBaseDeDatos.TablaBiblioteca!!.crearBiblioteca(1,"Biblioteca UCE","1990","Av America","Av America","2345678")
 
             BibliotecaBaseDeDatos.TablaBiblioteca!!.crearBiblioteca(2,"Biblioteca EPN","1980","Quito","Av Ladron de Guevara","2345677")
