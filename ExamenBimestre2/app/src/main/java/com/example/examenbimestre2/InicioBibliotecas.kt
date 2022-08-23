@@ -14,7 +14,7 @@ import com.google.firebase.ktx.Firebase
 class InicioBibliotecas : AppCompatActivity() {
 
         val db = Firebase.firestore
-        val equipos = db.collection("Equipos_Futbol")
+        val equipos = db.collection("Bibliotecas")
         var idItemSeleccionado = 0
         var adaptador: ArrayAdapter<Biblioteca>?=null
 
@@ -66,10 +66,10 @@ class InicioBibliotecas : AppCompatActivity() {
                     Log.i("context-menu", "Delte position: ${idItemSeleccionado}")
                     equipos.document("${bibliotecaSeleccionado.idBiblioteca}").delete()
                         .addOnSuccessListener {
-                            Log.i("Eliminar-Equipo","Exito")
+                            Log.i("Eliminar-Bibliotecas","Exito")
                         }
                         .addOnFailureListener{
-                            Log.i("Eliminar-Equipo","Fallido")
+                            Log.i("Eliminar-Bibliotecas","Fallido")
                         }
 
                     listarBibliotecas()
@@ -77,9 +77,9 @@ class InicioBibliotecas : AppCompatActivity() {
                 }
                 R.id.mi_libros -> {
                     Log.i("context-menu", "Libros: ${idItemSeleccionado}")
-                    val abrirInicioJugadores = Intent(this, InicioLibros::class.java)
-                    abrirInicioJugadores.putExtra("PosEquipoFutbol",bibliotecaSeleccionado)
-                    startActivity(abrirInicioJugadores)
+                    val abrirInicioLibros = Intent(this, InicioLibros::class.java)
+                    abrirInicioLibros.putExtra("PosBibliotecas",bibliotecaSeleccionado)
+                    startActivity(abrirInicioLibros)
                     return true
                 }
                 else -> super.onContextItemSelected(item)
@@ -118,9 +118,9 @@ class InicioBibliotecas : AppCompatActivity() {
         fun abrirActividadConParametros(
             clase: Class<*>
         ) {
-            val intentEditarEquipo = Intent(this, clase)
-            intentEditarEquipo.putExtra("posicionEditar", idItemSeleccionado)
-            startActivity(intentEditarEquipo)
+            val intentEditarBiblioteca = Intent(this, clase)
+            intentEditarBiblioteca.putExtra("posicionEditar", idItemSeleccionado)
+            startActivity(intentEditarBiblioteca)
         }
 
 

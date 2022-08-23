@@ -5,7 +5,7 @@ import android.os.Parcelable
 
 class Libro(
     var idLibro: String?,
-    var idBiblioteca: String?,
+    var idBiblio_Libro: String?,
     var nombreLibro:String?,
     var nombreAutor:String?,
     var yearEdicion: Int?,
@@ -18,7 +18,7 @@ class Libro(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-            parcel.readString(),
+        parcel.readString(),
         parcel.readInt(),
         parcel.readString(),
         parcel.readDouble()
@@ -28,11 +28,11 @@ class Libro(
 
         override fun writeToParcel(parcel: Parcel, flags: Int) {
             parcel.writeString(idLibro)
-            parcel.writeString(idBiblioteca)
+            parcel.writeString(idBiblio_Libro)
             parcel.writeString(nombreLibro)
             parcel.writeString(nombreAutor)
             parcel.writeInt(yearEdicion!!)
-            parcel.writeString(categoria!!)
+            parcel.writeString(categoria)
             parcel.writeDouble(precio!!)
         }
 

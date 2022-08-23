@@ -94,7 +94,7 @@ class InicioLibros : AppCompatActivity() {
             }
             R.id.mi_eliminarLibro -> {
                 Log.i("context-menu", "Delete position: ${idItemSeleccionado}")
-                val bibliotecasubColeccion= bibliotecas.document("${bibliotecaSeleccionado.idBiblioteca}")
+                val bibliotecaSubColeccion= bibliotecas.document("${bibliotecaSeleccionado.idBiblioteca}")
                     .collection("Libros")
                     .document("${libroSeleccionado!!.idLibro}")
                     .delete()

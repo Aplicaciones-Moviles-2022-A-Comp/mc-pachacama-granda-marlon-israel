@@ -49,7 +49,7 @@ class EditarBiblioteca : AppCompatActivity() {
                     "direccion",editarDireccion.text.toString(),
                     "telefono",editarTelefomo.text.toString()
                 )
-                Toast.makeText(this,"Biblioteca actualizado exitosamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Biblioteca actualizada con exito!!!", Toast.LENGTH_SHORT).show()
 
                 val intentEditSucces = Intent(this, InicioBibliotecas::class.java)
                 startActivity(intentEditSucces)

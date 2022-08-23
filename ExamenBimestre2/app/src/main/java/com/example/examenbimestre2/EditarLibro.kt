@@ -27,32 +27,32 @@ class EditarLibro : AppCompatActivity() {
         bibliotecaSeleccionado = intent.getParcelableExtra<Biblioteca>("posicionBibliotecaEditar")!!
         libroSeleccionado = intent.getParcelableExtra<Libro>("libro")!!
 
-        var txtNombreLibros = findViewById<TextInputEditText>(R.id.txt_nombre_libro_editar)
+        var txtNombreLibro = findViewById<TextInputEditText>(R.id.txt_nombre_libro_editar)
         var txtNombreAutor = findViewById<TextInputEditText>(R.id.txt_nombre_autor_editar)
         var txtYearEdicion = findViewById<TextInputEditText>(R.id.txt_year_edicion_editar)
         var txtCategoria = findViewById<TextInputEditText>(R.id.txt_categoria_editar)
         var txtPrecio = findViewById<TextInputEditText>(R.id.txt_precio_editar)
 
-        txtNombreLibros.setText(libroSeleccionado.nombreLibro)
-        txtNombreAutor.setText(libroSeleccionado.nombreAutor)
+        txtNombreLibro.setText(libroSeleccionado.nombreLibro)
+        txtNombreAutor.setText(libroSeleccionado.nombreAutor.toString())
         txtYearEdicion.setText(libroSeleccionado.yearEdicion.toString())
-        txtCategoria.setText(libroSeleccionado.categoria)
+        txtCategoria.setText(libroSeleccionado.categoria.toString())
         txtPrecio.setText(libroSeleccionado.precio.toString())
 
         val btnEditarLibro = findViewById<Button>(R.id.btn_editar_libro)
         btnEditarLibro.setOnClickListener {
             bibliotecas.document("${bibliotecaSeleccionado.idBiblioteca}")
-                .collection("Librod")
-                .document("${libroSeleccionado.idLibro}")
+                .collection("Libros")
+                .document("${libroSeleccionado.idBiblio_Libro}")
                 .update(
-                    "nombreLibro",txtNombreLibros.text.toString(),
+                    "nombreLibro",txtNombreLibro.text.toString(),
                     "nombreAutor",txtNombreAutor.text.toString(),
                     "yearEdicion",txtYearEdicion.text.toString(),
                     "categoria",txtCategoria.text.toString(),
                     "precio",txtPrecio.text.toString()
 
                 )
-            Toast.makeText(this,"Jugador actualizado exitosamente", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Libro actualizado con exito!!!", Toast.LENGTH_SHORT).show()
             val intentEditSucces = Intent(this, InicioLibros::class.java)
             startActivity(intentEditSucces)
         }

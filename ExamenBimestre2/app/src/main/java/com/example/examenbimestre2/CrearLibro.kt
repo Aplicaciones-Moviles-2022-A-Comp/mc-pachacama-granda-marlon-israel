@@ -68,7 +68,6 @@ class CrearLibro : AppCompatActivity() {
             }
         }
 
-
         fun respuesta() {
             val intentDevolverParametros = Intent()
             intentDevolverParametros.putExtra("PosBiblioteca", bibliotecaSeleccionado)
