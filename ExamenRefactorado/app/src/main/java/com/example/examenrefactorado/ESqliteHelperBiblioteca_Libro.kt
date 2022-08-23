@@ -73,7 +73,7 @@ class ESqliteHelperBiblioteca_Libro(
             if(resultadoConsultaLectura.moveToFirst()){
                 do {
                     biblioteca=Biblioteca(0,"",0,"","",0)
-                    biblioteca!!.idBiblioteca= resultadoConsultaLectura.getInt(0).toString()
+                    biblioteca!!.idBiblioteca= resultadoConsultaLectura.getInt(0)
                     biblioteca.nombreBiblioteca= resultadoConsultaLectura.getString(1)
                     biblioteca.yearFundacion= resultadoConsultaLectura.getString(2).toInt()
                     biblioteca.city= resultadoConsultaLectura.getString(3)
@@ -150,7 +150,7 @@ class ESqliteHelperBiblioteca_Libro(
             if(resultadoConsultaLectura.moveToFirst()){
                 do {
                     libro= Libro(0,"","","",0,"",0)
-                    libro!!.idLibro= resultadoConsultaLectura.getInt(0).toString()
+                    libro!!.idLibro= resultadoConsultaLectura.getInt(0)
                     libro.nombreLibro= resultadoConsultaLectura.getString(1)
                     libro.nombreAutor= resultadoConsultaLectura.getString(2)
                     libro.yearEdicion= resultadoConsultaLectura.getString(3).toInt()

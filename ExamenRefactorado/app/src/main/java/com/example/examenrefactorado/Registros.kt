@@ -8,17 +8,17 @@ class Registros{
         init {
             // Bibliotecas
 
-            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearBiblioteca(1,"Biblioteca UCE","Quito","Av America","2345678")
+            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearBiblioteca(1,"Biblioteca UCE","1990","Av America","Av America","2345678")
 
-            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearBiblioteca(2,"Biblioteca EPN","Quito","Av Ladron de Guevara","2345677")
+            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearBiblioteca(2,"Biblioteca EPN","1980","Quito","Av Ladron de Guevara","2345677")
 
-            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearBiblioteca(3,"Biblioteca ESPE","Quito","Av Militar","2345670")
+            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearBiblioteca(3,"Biblioteca ESPE","1978","Quito","Av Militar","2345670")
 
 
             // Libros
-            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearLibro(1,"Matematica","Calvache","Editorrial Norma","Ciencias Exactas","20")
+            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearLibro(1,"Matematica","Calvache","Editorial Norma","Ciencias Exactas","20")
 
-            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearLibro(2,"Fisica","Rojas","Editorrial Neptuno","Ciencias Exactas","15")
+            BibliotecaBaseDeDatos.TablaBiblioteca!!.crearLibro(2,"Fisica","Rojas","Editorial Neptuno","Ciencias Exactas","15")
 
             BibliotecaBaseDeDatos.TablaBiblioteca!!.crearLibro(3,"Ingles","Richard","Editorial Cambridge","Idioma Extrangero","30")
 

@@ -12,7 +12,7 @@ import com.google.firebase.ktx.Firebase
 
 class EditarBiblioteca : AppCompatActivity() {
 
-        var bibliotecaSeleccionado = Biblioteca("", "", 0, "", "", 0)
+        var bibliotecaSeleccionado = Biblioteca(0, "", 0, "", "", 0)
         val db = Firebase.firestore
         val bibliotecas = db.collection("Bibliotecas")
 

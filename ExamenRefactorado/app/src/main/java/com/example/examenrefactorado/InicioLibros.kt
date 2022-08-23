@@ -14,12 +14,12 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class InicioLibros : AppCompatActivity() {
-    var bibliotecaSeleccionado=Biblioteca("","",0,"","",0)
+    var bibliotecaSeleccionado=Biblioteca(0,"",0,"","",0)
     val db = Firebase.firestore
     val bibliotecas = db.collection("Bibliotecas")
     var idItemSeleccionado = 0
     var adaptador: ArrayAdapter<Libro>?=null
-    var libroSeleccionado:Libro? = Libro("","","", "", 0, "", 0)
+    var libroSeleccionado:Libro? = Libro(0,"","", "", 0, "", 0)
 
 
     var resultAnadirlibro = registerForActivityResult(
@@ -121,7 +121,7 @@ class InicioLibros : AppCompatActivity() {
             for(document in result){
                 listaLibros.add(
                     Libro(
-                        document.id.toString(),
+                        document.id.toString().toInt(),
                         document.data.get("idBiblioteca").toString(),
                         document.data.get("nombreLibro").toString(),
                         document.data.get("nombreAutor").toString(),

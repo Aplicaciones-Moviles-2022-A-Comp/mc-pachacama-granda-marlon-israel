@@ -92,7 +92,7 @@ class InicioBibliotecas : AppCompatActivity() {
                 for (document in result) {
                     bibliotecaLista.add(
                         Biblioteca(
-                            document.id.toString(),
+                            document.id.toString().toInt(),
                             document.get("nombreBiblioteca").toString(),
                             document.get("yearFundacion").toString().toInt(),
                             document.get("city").toString(),
