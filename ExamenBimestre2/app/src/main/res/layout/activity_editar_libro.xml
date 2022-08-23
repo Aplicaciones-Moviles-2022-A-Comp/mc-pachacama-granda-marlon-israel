@@ -23,142 +23,15 @@
         android:id="@+id/tv_nombre_libro_crear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Nombre del Jugador:"
+        android:layout_marginTop="12dp"
+        android:text="Nombre del Libro:"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/tv_AnadirLibro"
-        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_AnadirLibro"
         app:layout_constraintTop_toBottomOf="@+id/tv_AnadirLibro" />
-
-    <TextView
-        android:id="@+id/tv_nombre_autor_crear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha de Nacimiento:"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
-
-    <TextView
-        android:id="@+id/tv_year_edicion_crear"
-        android:layout_width="156dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="16dp"
-        android:text="Estatura del jugador:"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/txt_fechaJ_crear"
-        app:layout_constraintHorizontal_bias="0.006"
-        app:layout_constraintStart_toStartOf="@+id/txt_fechaJ_crear"
-        app:layout_constraintTop_toBottomOf="@+id/txt_fechaJ_crear" />
-
-    <TextView
-        android:id="@+id/tv_categoria_crear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Posición del Jugador:"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
-
-    <TextView
-        android:id="@+id/tv_precio_crear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:text="El Jugador es ecuatoriano:"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout7"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
-
-    <Button
-        android:id="@+id/btn_editar_libro"
-        android:layout_width="188dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="64dp"
-        android:text="Guardar Cambios"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout11" />
-
-    <Button
-        android:id="@+id/btn_cancelar_libro_editar"
-        android:layout_width="146dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
-        android:text="cancelar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_editar_libro" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        android:layout_width="327dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_nombre_libro_crear"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_libro_crear">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_nombre_libro_editar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txt_fechaJ_crear"
-        android:layout_width="322dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="3dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_nombre_autor_crear"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_autor_crear">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_nombre_autor_editar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
-        android:layout_width="327dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_year_edicion_crear"
-        app:layout_constraintTop_toBottomOf="@+id/tv_year_edicion_crear">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_year_edicion_editar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout7"
-        android:layout_width="324dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="1dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_categoria_crear"
-        app:layout_constraintTop_toBottomOf="@+id/tv_categoria_crear">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_categoria_editar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout11"
@@ -173,5 +46,136 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="327dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_year_edicion_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_year_edicion_crear">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_year_edicion_editar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout7"
+        android:layout_width="324dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_categoria_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_categoria_crear">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_categoria_editar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="327dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_nombre_libro_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_libro_crear">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_nombre_libro_editar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_year_edicion_crear"
+        android:layout_width="156dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="20dp"
+        android:text="Año de Edición:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txt_fechaJ_crear"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_fechaJ_crear"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fechaJ_crear" />
+
+    <TextView
+        android:id="@+id/tv_precio_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Precio:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout7"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
+
+    <TextView
+        android:id="@+id/tv_categoria_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Categoria:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_fechaJ_crear"
+        android:layout_width="322dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_nombre_autor_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_autor_crear">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_nombre_autor_editar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_nombre_autor_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Nombre del Autor:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+    <Button
+        android:id="@+id/btn_editar_libro"
+        android:layout_width="161dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="64dp"
+        android:text="Guardar Cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout11"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout11"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btn_cancelar_libro_editar"
+        android:layout_width="139dp"
+        android:layout_height="41dp"
+        android:text="cancelar"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_editar_libro"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout11"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_editar_libro"
+        app:layout_constraintTop_toTopOf="@+id/btn_editar_libro"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

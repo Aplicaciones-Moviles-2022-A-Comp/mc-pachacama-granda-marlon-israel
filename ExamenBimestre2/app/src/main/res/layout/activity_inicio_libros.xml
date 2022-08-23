@@ -38,24 +38,13 @@
 
     <Button
         android:id="@+id/btn_crear_libro"
-        android:layout_width="232dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="68dp"
+        android:layout_width="147dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="44dp"
         android:text="Crear Nuevo Libro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/scrollView6"
-        app:layout_constraintHorizontal_bias="0.261"
-        app:layout_constraintStart_toStartOf="@+id/scrollView6" />
-
-    <Button
-        android:id="@+id/btn_volver_libro"
-        android:layout_width="146dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
-        android:text="Volver"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView6"
-        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/scrollView6" />
 
     <ScrollView
@@ -65,6 +54,7 @@
         android:layout_marginStart="135dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_nombreLibro"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="@+id/tv_nombreLibro"
         app:layout_constraintTop_toBottomOf="@+id/tv_nombreLibro">
 
@@ -79,5 +69,16 @@
                 android:layout_height="400dp" />
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/btn_volver_libro"
+        android:layout_width="141dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="44dp"
+        android:text="Volver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView6"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/scrollView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

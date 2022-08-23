@@ -153,7 +153,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="44dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_precio_crear"
-        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_precio_crear"
         app:layout_constraintTop_toBottomOf="@+id/tv_precio_crear">
 

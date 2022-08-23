@@ -26,9 +26,9 @@
         android:id="@+id/btn_crear_nueva_biblioteca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="44dp"
-        android:text="Crear  Nuevo Equipo"
+        android:text="Crear  Nueva Biblioteca"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/scrollView2" />
