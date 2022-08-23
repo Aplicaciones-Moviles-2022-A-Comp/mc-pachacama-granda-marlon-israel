@@ -19,7 +19,7 @@ class InicioLibros : AppCompatActivity() {
     val bibliotecas = db.collection("Bibliotecas")
     var idItemSeleccionado = 0
     var adaptador: ArrayAdapter<Libro>?=null
-    var libroSeleccionado:Libro? = Libro("","","", "", 0, "", 0)
+    var libroSeleccionado:Libro? = Libro("","","", "", 0, "", 0.0)
 
 
     var resultAnadirlibro = registerForActivityResult(
@@ -127,7 +127,7 @@ class InicioLibros : AppCompatActivity() {
                         document.data.get("nombreAutor").toString(),
                         document.data.get("yearEdicion").toString().toInt(),
                         document.data.get("categoria").toString(),
-                        document.data.get("precio").toString().toInt(),
+                        document.data.get("precio").toString().toDouble(),
                     )
                 )
             }

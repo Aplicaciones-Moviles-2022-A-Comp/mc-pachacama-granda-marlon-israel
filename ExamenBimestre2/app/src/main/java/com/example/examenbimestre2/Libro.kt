@@ -10,7 +10,7 @@ class Libro(
     var nombreAutor:String?,
     var yearEdicion: Int?,
     var categoria: String?,
-    var precio: Int?,
+    var precio: Double?,
 
 
     ) : Parcelable{
@@ -21,7 +21,7 @@ class Libro(
             parcel.readString(),
         parcel.readInt(),
         parcel.readString(),
-        parcel.readInt()
+        parcel.readDouble()
 
         ) {
         }
@@ -33,7 +33,7 @@ class Libro(
             parcel.writeString(nombreAutor)
             parcel.writeInt(yearEdicion!!)
             parcel.writeString(categoria!!)
-            parcel.writeInt(precio!!)
+            parcel.writeDouble(precio!!)
         }
 
         override fun describeContents(): Int {
