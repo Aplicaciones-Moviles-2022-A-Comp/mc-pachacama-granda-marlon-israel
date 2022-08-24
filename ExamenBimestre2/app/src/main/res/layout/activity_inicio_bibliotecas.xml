@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/tv_ListaBibliotecas"
-        android:layout_width="198dp"
-        android:layout_height="47dp"
+        android:layout_width="320dp"
+        android:layout_height="86dp"
         android:layout_marginTop="70dp"
         android:text="Bibliotecas:"
         android:textColor="#000000"
@@ -17,38 +17,41 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.008" />
 
     <Button
         android:id="@+id/btn_crear_nueva_biblioteca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:text="Crear  NuevAa Biblioteca"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="44dp"
+        android:text="Crear  Nueva Biblioteca"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/scrollView2" />
 
     <ScrollView
-        android:layout_width="356dp"
-        android:layout_height="461dp"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="150dp">
+        android:id="@+id/scrollView2"
+        android:layout_width="320dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_ListaBibliotecas"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_ListaBibliotecas"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ListaBibliotecas">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ListView
                 android:id="@+id/lv_bibliotecas_lista"
-                android:layout_width="match_parent"
-                android:layout_height="463dp" />
+                android:layout_width="320dp"
+                android:layout_height="400dp" />
         </LinearLayout>
     </ScrollView>
 
