@@ -111,12 +111,12 @@ class InicioLibros : AppCompatActivity() {
         }
     }
     fun listViewlibroes() {
-        val bibliotecasubColeccion= bibliotecas.document("${bibliotecaSeleccionado.idBiblioteca}")
+        val bibliotecaSubColeccion= bibliotecas.document("${bibliotecaSeleccionado.idBiblioteca}")
             .collection("Libros")
             .whereEqualTo("idBiblioteca","${bibliotecaSeleccionado.idBiblioteca}")
 
         val libros_lv = findViewById<ListView>(R.id.lv_libros_lista)
-        bibliotecasubColeccion.get().addOnSuccessListener { result ->
+        bibliotecaSubColeccion.get().addOnSuccessListener { result ->
             var listaLibros = arrayListOf<Libro>()
             for(document in result){
                 listaLibros.add(
@@ -147,7 +147,7 @@ class InicioLibros : AppCompatActivity() {
     ) {
         val intentEditarlibro = Intent(this, clase)
         intentEditarlibro.putExtra("libro", libroSeleccionado)
-        intentEditarlibro.putExtra("posicionBibliotecaeditar",bibliotecaSeleccionado)
+        intentEditarlibro.putExtra("posicionBibliotecaEditar",bibliotecaSeleccionado)
         resultEditarlibro.launch(intentEditarlibro)
     }
 

@@ -14,7 +14,7 @@ import com.google.firebase.ktx.Firebase
 class InicioBibliotecas : AppCompatActivity() {
 
         val db = Firebase.firestore
-        val equipos = db.collection("Bibliotecas")
+        val bibliotecas = db.collection("Bibliotecas")
         var idItemSeleccionado = 0
         var adaptador: ArrayAdapter<Biblioteca>?=null
 
@@ -30,8 +30,8 @@ class InicioBibliotecas : AppCompatActivity() {
             listarBibliotecas()
             val btnAnadirBiblioteca = findViewById<Button>(R.id.btn_crear_nueva_biblioteca)
             btnAnadirBiblioteca.setOnClickListener {
-                val intentAddEquipo = Intent(this, CrearBiblioteca::class.java)
-                startActivity(intentAddEquipo)
+                val intentAddBiblioteca = Intent(this, CrearBiblioteca::class.java)
+                startActivity(intentAddBiblioteca)
             }
 
         }
@@ -64,7 +64,7 @@ class InicioBibliotecas : AppCompatActivity() {
                 }
                 R.id.mi_eliminar -> {
                     Log.i("context-menu", "Delte position: ${idItemSeleccionado}")
-                    equipos.document("${bibliotecaSeleccionado.idBiblioteca}").delete()
+                    bibliotecas.document("${bibliotecaSeleccionado.idBiblioteca}").delete()
                         .addOnSuccessListener {
                             Log.i("Eliminar-Bibliotecas","Exito")
                         }
@@ -87,7 +87,7 @@ class InicioBibliotecas : AppCompatActivity() {
         }
         fun listarBibliotecas(){
             val lv_bibliotecas = findViewById<ListView>(R.id.lv_bibliotecas_lista)
-            equipos.get().addOnSuccessListener{ result ->
+            bibliotecas.get().addOnSuccessListener{ result ->
                 var bibliotecaLista = arrayListOf<Biblioteca>()
                 for (document in result) {
                     bibliotecaLista.add(
